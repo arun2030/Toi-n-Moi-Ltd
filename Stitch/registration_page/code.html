@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register - Toi &amp; Moi</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4258c",
+                        "primary-hover": "#d61a75",
+                        "background-light": "#f8f5f7",
+                        "background-dark": "#221019",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1522",
+                        "text-main": "#1c0d14",
+                        "text-muted": "#9c4973",
+                        "border-color": "#e8cedb",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-text-main dark:text-gray-100 min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="w-full border-b border-border-color/50 dark:border-gray-800 bg-surface-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<!-- Logo Section -->
+<div class="flex items-center gap-3">
+<div class="text-primary size-8">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-text-main dark:text-white text-xl font-bold tracking-tight">Toi &amp; Moi</span>
+</div>
+<!-- Right Action -->
+<div class="flex items-center gap-4">
+<span class="hidden sm:block text-sm text-text-muted font-medium">Already have an account?</span>
+<button class="bg-surface-light dark:bg-surface-dark border border-border-color dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-main dark:text-white text-sm font-bold py-2 px-6 rounded-lg transition-colors duration-200">
+                        Log In
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col lg:flex-row">
+<!-- Left: Form Section -->
+<div class="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24 bg-surface-light dark:bg-background-dark lg:w-1/2">
+<div class="mx-auto w-full max-w-sm lg:w-96">
+<!-- Heading -->
+<div class="text-center lg:text-left mb-10">
+<h2 class="text-4xl font-extrabold text-text-main dark:text-white tracking-tight mb-3">Create Account</h2>
+<p class="text-text-muted dark:text-gray-400 text-base">Sign up to track orders, save your wishlist, and get exclusive offers.</p>
+</div>
+<!-- Form -->
+<form action="#" class="space-y-6" method="POST">
+<!-- Full Name -->
+<div>
+<label class="block text-sm font-semibold text-text-main dark:text-gray-200 mb-2" for="name">Full Name</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-muted text-xl">person</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-border-color dark:border-gray-700 rounded-lg bg-background-light dark:bg-surface-dark text-text-main dark:text-white placeholder-text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="name" name="name" placeholder="Enter your full name" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div>
+<label class="block text-sm font-semibold text-text-main dark:text-gray-200 mb-2" for="email">Email Address</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-muted text-xl">mail</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-border-color dark:border-gray-700 rounded-lg bg-background-light dark:bg-surface-dark text-text-main dark:text-white placeholder-text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="email" name="email" placeholder="Enter your email address" type="email"/>
+</div>
+</div>
+<!-- Password Group -->
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+<div>
+<label class="block text-sm font-semibold text-text-main dark:text-gray-200 mb-2" for="password">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-muted text-xl">lock</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-border-color dark:border-gray-700 rounded-lg bg-background-light dark:bg-surface-dark text-text-main dark:text-white placeholder-text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-text-main dark:text-gray-200 mb-2" for="password_confirmation">Confirm Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-muted text-xl">lock_reset</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-border-color dark:border-gray-700 rounded-lg bg-background-light dark:bg-surface-dark text-text-main dark:text-white placeholder-text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="password_confirmation" name="password_confirmation" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<!-- Terms -->
+<div class="flex items-start">
+<div class="flex items-center h-5">
+<input class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded cursor-pointer" id="terms" name="terms" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<label class="font-medium text-text-main dark:text-gray-300" for="terms">I agree to the <a class="text-primary hover:text-primary-hover underline decoration-dashed" href="#">Terms of Service</a> and <a class="text-primary hover:text-primary-hover underline decoration-dashed" href="#">Privacy Policy</a></label>
+</div>
+</div>
+<!-- Submit Button -->
+<div>
+<button class="w-full flex justify-center py-3.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-200" type="submit">
+                            Create Account
+                        </button>
+</div>
+</form>
+<!-- Divider -->
+<div class="mt-8">
+<div class="relative">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-border-color dark:border-gray-700"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-surface-light dark:bg-background-dark text-text-muted">Or continue with</span>
+</div>
+</div>
+<div class="mt-6 grid grid-cols-2 gap-3">
+<button class="w-full inline-flex justify-center py-2.5 px-4 border border-border-color dark:border-gray-700 rounded-lg shadow-sm bg-white dark:bg-surface-dark text-sm font-medium text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" type="button">
+<span class="sr-only">Sign up with Google</span>
+<svg aria-hidden="true" class="h-5 w-5" viewbox="0 0 24 24">
+<path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" fill="#EA4335"></path>
+</svg>
+</button>
+<button class="w-full inline-flex justify-center py-2.5 px-4 border border-border-color dark:border-gray-700 rounded-lg shadow-sm bg-white dark:bg-surface-dark text-sm font-medium text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" type="button">
+<span class="sr-only">Sign up with Facebook</span>
+<svg aria-hidden="true" class="h-5 w-5 text-[#1877F2]" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Image Section -->
+<div class="hidden lg:block relative w-0 flex-1 overflow-hidden">
+<!-- data-alt attribute included as requested for accessibility/description -->
+<div class="absolute inset-0 h-full w-full bg-cover bg-center" data-alt="Stylish sneakers and modern fashion aesthetic with pastel pink lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSwtI1bI0Wm_W2jNAtJ1VmOw0VsAzJYkXj456d1_174wYOu-ib4EokoZP6KTGnEGkt2a-M-grCsjEacoGjsPG7Yh83ubl2sbi8u3UKXM0ptEAZJthWT4SjVxeIuhMzen7EEIjJwETZNxRCXL8Q0-cMndujL7aZDGX6_vV03hMaE1wrMgVSut58S2s3rRCr3eput_iSbGRWEr2aE_fyqc8St4K26y6O9M8QzQ-pLRmSu7N0dtakGxuamHMtmT2n_Pyj8EwA2PcosGE');">
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex flex-col justify-end p-16">
+<h3 class="text-white text-3xl font-bold mb-2">Join the Club</h3>
+<p class="text-white/90 text-lg">Experience personalized shopping, exclusive drops, and early access to sales.</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

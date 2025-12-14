@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search Results - Toi &amp; Moi</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b017cf",
+                        "background-light": "#f8f6f8",
+                        "background-dark": "#1e1121",
+                        "text-main": "#190e1b",
+                        "text-secondary": "#8b4e97",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for Filters if needed */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main font-display antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-[#f1e7f3] dark:border-gray-800">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20 gap-8">
+<!-- Logo -->
+<div class="flex items-center gap-4 text-text-main dark:text-white shrink-0">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">Toi &amp; Moi</h2>
+</div>
+<!-- Nav Links (Hidden on small screens) -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">New In</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Clothing</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Sale</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Editorial</a>
+</nav>
+<!-- Search & Actions -->
+<div class="flex flex-1 justify-end gap-4 lg:gap-6">
+<label class="hidden md:flex flex-col min-w-40 w-full max-w-[320px]">
+<div class="flex w-full items-stretch rounded-lg bg-[#f1e7f3] dark:bg-white/10 overflow-hidden h-10 transition-shadow focus-within:ring-2 focus-within:ring-primary/50">
+<div class="flex items-center justify-center pl-3 text-primary dark:text-primary/80">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full bg-transparent border-none text-text-main dark:text-white placeholder:text-text-secondary dark:placeholder:text-gray-400 text-sm px-3 focus:ring-0" placeholder="Search products..." value="Summer Dress"/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center size-10 rounded-lg bg-[#f1e7f3] dark:bg-white/10 text-text-main dark:text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[22px]">person</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-[#f1e7f3] dark:bg-white/10 text-text-main dark:text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[22px]">favorite</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-[#f1e7f3] dark:bg-white/10 text-text-main dark:text-white hover:bg-primary/20 transition-colors relative">
+<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+<span class="absolute top-1.5 right-1.5 size-2 bg-primary rounded-full"></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 mb-4 text-sm">
+<a class="text-text-secondary dark:text-gray-400 hover:text-primary" href="#">Home</a>
+<span class="text-gray-300 dark:text-gray-600">/</span>
+<span class="text-text-main dark:text-white font-medium">Search Results</span>
+</div>
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h1 class="text-text-main dark:text-white text-3xl md:text-4xl font-black tracking-tight mb-2">Results for 'Summer Dress'</h1>
+<p class="text-text-secondary dark:text-gray-400 font-medium">124 items found</p>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8 items-start">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 shrink-0 lg:sticky lg:top-24 space-y-8 bg-white dark:bg-white/5 p-4 rounded-xl border border-[#f1e7f3] dark:border-white/10">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-lg text-text-main dark:text-white">Filters</h3>
+<button class="text-xs font-medium text-primary hover:underline">Clear All</button>
+</div>
+<!-- Active Filters -->
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                        Dresses <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                        $50 - $150 <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+</div>
+<!-- Categories Accordion -->
+<div class="space-y-3">
+<p class="font-semibold text-sm text-text-main dark:text-white uppercase tracking-wider">Category</p>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary size-4" type="checkbox"/>
+<span class="text-sm text-text-secondary dark:text-gray-300 group-hover:text-primary transition-colors">Dresses</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary size-4" type="checkbox"/>
+<span class="text-sm text-text-secondary dark:text-gray-300 group-hover:text-primary transition-colors">Skirts</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary size-4" type="checkbox"/>
+<span class="text-sm text-text-secondary dark:text-gray-300 group-hover:text-primary transition-colors">Tops</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary size-4" type="checkbox"/>
+<span class="text-sm text-text-secondary dark:text-gray-300 group-hover:text-primary transition-colors">Jumpsuits</span>
+</label>
+</div>
+</div>
+<hr class="border-[#f1e7f3] dark:border-white/10"/>
+<!-- Price Slider -->
+<div class="space-y-4">
+<p class="font-semibold text-sm text-text-main dark:text-white uppercase tracking-wider">Price Range</p>
+<div class="relative h-1 bg-gray-200 dark:bg-white/20 rounded-full mt-2">
+<div class="absolute left-1/4 right-1/4 h-full bg-primary rounded-full"></div>
+<div class="absolute left-1/4 top-1/2 -translate-y-1/2 size-4 bg-white border-2 border-primary rounded-full shadow cursor-pointer hover:scale-110 transition-transform"></div>
+<div class="absolute right-1/4 top-1/2 -translate-y-1/2 size-4 bg-white border-2 border-primary rounded-full shadow cursor-pointer hover:scale-110 transition-transform"></div>
+</div>
+<div class="flex items-center justify-between text-sm text-text-main dark:text-white font-medium">
+<span>$50</span>
+<span>$150</span>
+</div>
+</div>
+<hr class="border-[#f1e7f3] dark:border-white/10"/>
+<!-- Color Swatches -->
+<div class="space-y-3">
+<p class="font-semibold text-sm text-text-main dark:text-white uppercase tracking-wider">Color</p>
+<div class="flex flex-wrap gap-3">
+<button class="size-6 rounded-full bg-black border border-gray-200 ring-2 ring-primary ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark"></button>
+<button class="size-6 rounded-full bg-white border border-gray-300 hover:ring-2 hover:ring-gray-300 transition-all"></button>
+<button class="size-6 rounded-full bg-red-500 hover:ring-2 hover:ring-red-300 transition-all"></button>
+<button class="size-6 rounded-full bg-blue-500 hover:ring-2 hover:ring-blue-300 transition-all"></button>
+<button class="size-6 rounded-full bg-yellow-400 hover:ring-2 hover:ring-yellow-200 transition-all"></button>
+<button class="size-6 rounded-full bg-green-500 hover:ring-2 hover:ring-green-300 transition-all"></button>
+<button class="size-6 rounded-full bg-pink-400 hover:ring-2 hover:ring-pink-300 transition-all"></button>
+</div>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<div class="flex-1 w-full">
+<!-- Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6 bg-white dark:bg-white/5 p-3 rounded-xl border border-[#f1e7f3] dark:border-white/10">
+<div class="flex items-center gap-3">
+<label class="text-sm font-medium text-text-secondary dark:text-gray-400">Sort by:</label>
+<select class="form-select border-none bg-transparent py-1 pl-2 pr-8 text-sm font-bold text-text-main dark:text-white focus:ring-0 cursor-pointer">
+<option>Relevance</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest Arrivals</option>
+</select>
+</div>
+<div class="flex items-center bg-[#f1e7f3] dark:bg-white/10 rounded-lg p-1 gap-1">
+<button class="p-1.5 rounded-md text-text-secondary dark:text-gray-400 hover:bg-white dark:hover:bg-white/10 hover:text-primary transition-all hover:shadow-sm">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded-md bg-white dark:bg-white/20 text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">view_comfy</span>
+</button>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mb-10">
+<!-- Product Card 1 -->
+<div class="group flex flex-col gap-3">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5">
+<img alt="Floral Summer Dress" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Woman wearing white floral summer dress standing in sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwqwH8pxsiiKG2y6tlMGHq7WbipNOgwkb5GrOk5o3Gn2THBew_wfgCdXb6nIYVJlLROutoZCmcct1VBBBRjb7bphuq11a380bSTTXLclys7zf5oRYLhzcCimixxSlWmJj8hB4I7AHBtQpte-jd2JyK8yxPTnb4Ct8G_CSo6BFCc8HLHJ7YU9oXwgTJtmnXxunbtn2JisFhIZECthzuY4C1HNtUKmB-YizhM2suYsFWWdZD1cy3Eb5ETEH0wASVe0XeoxjTlRBmurA"/>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 dark:bg-black/50 text-text-main dark:text-white hover:text-primary hover:bg-white transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px] filled">favorite</span>
+</button>
+<div class="absolute top-3 left-3 px-2 py-1 bg-white/90 dark:bg-black/60 backdrop-blur-sm text-xs font-bold uppercase tracking-wider rounded text-text-main dark:text-white">New</div>
+<!-- Quick Add Overlay -->
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<button class="w-full py-3 bg-white/90 dark:bg-black/80 backdrop-blur text-text-main dark:text-white text-sm font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-colors">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-semibold text-text-secondary dark:text-gray-400">TOI &amp; MOI</p>
+<h3 class="text-base font-bold text-text-main dark:text-white leading-tight">Floral Midi Wrap Dress</h3>
+<p class="text-sm font-medium text-text-main dark:text-white">$89.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col gap-3">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5">
+<img alt="Blue Silk Gown" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Model posing in elegant blue evening gown" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALNkhk3BkrIn61mJ80wf1AQZLf8wkvFqlcr4VTRUYpGmWdyTS8mf5jCxCOAuq9eC-Y99VaZUMyxsL7Oe2STtwaagjxNtLhVE91303OEzqrgodEYzWc7FRMBCX0kxw0Kfm8Zo87hmTlv7LUtoia_k-ry4N3fPAacnbHMcayvS5NCZcPGkc-5GkFdnhrKuD_FONxAUXknwJJlG7Qj3hYrGBlNzSwk1Dl0brbOIRhIBoITAMDh5ejhJT8EDpbmcabXE-tgGUuvw009FY"/>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 dark:bg-black/50 text-text-main dark:text-white hover:text-primary hover:bg-white transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="absolute top-3 left-3 px-2 py-1 bg-primary/90 text-white backdrop-blur-sm text-xs font-bold uppercase tracking-wider rounded">Sale</div>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<button class="w-full py-3 bg-white/90 dark:bg-black/80 backdrop-blur text-text-main dark:text-white text-sm font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-colors">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-semibold text-text-secondary dark:text-gray-400">LUXE</p>
+<h3 class="text-base font-bold text-text-main dark:text-white leading-tight">Azure Silk Evening Gown</h3>
+<div class="flex items-center gap-2">
+<p class="text-sm font-bold text-red-600">$120.00</p>
+<p class="text-sm text-gray-400 line-through">$180.00</p>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col gap-3">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5">
+<img alt="Yellow Sundress" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Woman in casual yellow summer sundress outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbECWNYXNgDjPM4vW70G_gzo7JDqqjJUwTTdQ1KkzZCqt5W-xSBQJc3Dbn8O-3rSDIUFuztApwHtukbuUPjHokmsyEbOViZtnhfWV1xHAgL8eotQpJwBK8TUinvA1PwqstKnbHWxearKcgZdlhFKOEJwY0DnLKFg2uedUtVoIqtg4sYUYjUuatQc86NTHUXzG4kwZj8D8APj185aKNGmZw6F6WFDVmQEBQAu_-nHkum0rjM85Ngt0l-KxOGordNCA1ABEsdhcQrSc"/>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 dark:bg-black/50 text-text-main dark:text-white hover:text-primary hover:bg-white transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<button class="w-full py-3 bg-white/90 dark:bg-black/80 backdrop-blur text-text-main dark:text-white text-sm font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-colors">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-semibold text-text-secondary dark:text-gray-400">SUN &amp; SAND</p>
+<h3 class="text-base font-bold text-text-main dark:text-white leading-tight">Sunshine Linen Sundress</h3>
+<p class="text-sm font-medium text-text-main dark:text-white">$65.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col gap-3">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5">
+<img alt="Boho Chic Maxi" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up of floral pattern texture on a dress" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmzDpUT52RJJeNZnVCpn3PrgrSY74Jp64B12Eu3dQOdQtqTwA7bHH68Q3tGxo4rt3OygsAB9P1nr7ovDGvvmj02X5Up_OzaPd1kIb6p_Bm7eME8DdNx_9ObOJSVfZ6moI6jsOdsejo5lAKRN5LwPS2FzDGrGIJVSE3nhe0bHbR7vvCyANncIo3aEbchSiY9o0lJ-zJCQ-pjZGLVtxsYG6UxRuhV6LSAQOs47pzsiVLhpPYOuJaoV-ew1-tSHYoecD8_YNy4C_LfUo"/>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 dark:bg-black/50 text-text-main dark:text-white hover:text-primary hover:bg-white transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="absolute top-3 left-3 px-2 py-1 bg-white/90 dark:bg-black/60 backdrop-blur-sm text-xs font-bold uppercase tracking-wider rounded text-text-main dark:text-white">Best Seller</div>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<button class="w-full py-3 bg-white/90 dark:bg-black/80 backdrop-blur text-text-main dark:text-white text-sm font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-colors">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-semibold text-text-secondary dark:text-gray-400">BOHO</p>
+<h3 class="text-base font-bold text-text-main dark:text-white leading-tight">Bohemian Print Maxi</h3>
+<p class="text-sm font-medium text-text-main dark:text-white">$110.00</p>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group flex flex-col gap-3">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5">
+<img alt="Velvet Cocktail Dress" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Woman wearing black velvet cocktail dress" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-7_kcnk-xGfsfXo69C8bDrrzLSja15WENtU3_0Czwo57QYqoaK39SDdKSxTY2TXEx7sTABJ8dpvRKT3XxETUU4ZusuBpRp4oJEeaJv5H4MhcLKbOqNSAJc8ms6sI7kmXAYeJiBYuW4j78v5cj4VmvcTjNjk0IfUbBZLZnLH8u6GbTA7Rm3xOH3JRyROruqQqTNgmWCBip6k1tnClMqo7jM5v41B0bN69QLnV2cRvs8IBH1y8YInsJRnZKXmahvBLsedH8mDWi59c"/>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 dark:bg-black/50 text-text-main dark:text-white hover:text-primary hover:bg-white transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<button class="w-full py-3 bg-white/90 dark:bg-black/80 backdrop-blur text-text-main dark:text-white text-sm font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-colors">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-semibold text-text-secondary dark:text-gray-400">NOIR</p>
+<h3 class="text-base font-bold text-text-main dark:text-white leading-tight">Velvet Mini Cocktail Dress</h3>
+<p class="text-sm font-medium text-text-main dark:text-white">$145.00</p>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group flex flex-col gap-3">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5">
+<img alt="Knit Midi Dress" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Stylish woman in white knit dress posing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEYVnekRc8dzhZ9bvbeoYB8reaFKcTvcNb936mMNjqkbhbBRwsTjFEZdWs1kMANfvHsftqG0dcekneQL653Gybw7zi0MfjxD0Qaz-Cb5LnhmaTcuCG48gIAIIB1NH6YT-vglKkwnBt6P36kvJINYA9n3wkEovgr8Yr4XZIl2FOAImENVc7wAaXPrdxJbqt0xWfCGN6D7Xz60Wkl9vFSfH_BNSrqZbcDoC5mjLavE5Thz4qSirTRvz21f-OQRoSsOOMy4NQBmUAZao"/>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 dark:bg-black/50 text-text-main dark:text-white hover:text-primary hover:bg-white transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<button class="w-full py-3 bg-white/90 dark:bg-black/80 backdrop-blur text-text-main dark:text-white text-sm font-bold rounded-lg shadow-lg hover:bg-primary hover:text-white transition-colors">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-semibold text-text-secondary dark:text-gray-400">ESSENTIALS</p>
+<h3 class="text-base font-bold text-text-main dark:text-white leading-tight">Ribbed Knit Midi Dress</h3>
+<p class="text-sm font-medium text-text-main dark:text-white">$78.00</p>
+</div>
+</div>
+</div>
+<!-- Load More / Pagination -->
+<div class="flex justify-center pb-12">
+<button class="px-8 py-3 bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 text-text-main dark:text-white font-bold rounded-lg hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
+                        Load More Products
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

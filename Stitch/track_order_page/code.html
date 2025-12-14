@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Track Order - Toi &amp; Moi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#b017cf",
+              "background-light": "#fbf8fc",
+              "background-dark": "#1e1121",
+              "surface-light": "#ffffff",
+              "surface-dark": "#2a1b2d",
+              "border-light": "#f1e7f3",
+              "border-dark": "#3d2b42",
+              "text-main": "#190e1b",
+              "text-muted": "#8b4e97",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark text-text-main dark:text-white group/design-root overflow-x-hidden font-display transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur px-4 py-3 md:px-10">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-4 text-text-main dark:text-white transition-opacity hover:opacity-80" href="#">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] hidden md:block">Toi &amp; Moi</h2>
+</a>
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">New Arrivals</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dresses</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Clothing</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-sm font-medium leading-normal text-primary" href="#">Track Order</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8">
+<!-- Mobile Search Toggle (Visible on small screens) -->
+<button class="md:hidden flex items-center justify-center rounded-lg size-10 text-text-main dark:text-white">
+<span class="material-symbols-outlined">search</span>
+</button>
+<!-- Desktop Search -->
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-transparent focus-within:border-primary/30 transition-colors">
+<div class="text-text-muted flex border-none bg-border-light dark:bg-border-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-0 border-none bg-border-light dark:bg-border-dark focus:border-none h-full placeholder:text-text-muted/70 px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search store..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center overflow-hidden rounded-lg size-10 bg-border-light dark:bg-border-dark hover:bg-primary/10 transition-colors text-text-main dark:text-white relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-background-light dark:border-background-dark"></span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-lg size-10 bg-border-light dark:bg-border-dark hover:bg-primary/10 transition-colors text-text-main dark:text-white">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-border-light dark:border-border-dark" data-alt="User profile picture placeholder with abstract gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgzoN0N0qPybEVrjj6INQun-z-JHsr_-3bFM0Ltv3A3WJ68jKf3leXRYFPmRVpcPpB21TU12aRMLqx73hjuMEIjtHRqw2-cdkdKdsWBwb3XPISSrZ4-oyHyqc0skQQTFFd5pqYzCaqRnooaVgCVaTEXH2l0GjGtslKK6AsP299njIq8n1C10kx0CLuKwd2ZwducwPrsvWIuRmvS72Ao6A3TpxMive89Z6INybeXXodXii-BQl-KuUgbeyHUCRyxQKVokdkiSG2lMM");'></div>
+</div>
+</header>
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[1024px] flex-1 gap-8">
+<!-- Page Heading & Search Section -->
+<section class="flex flex-col gap-6 items-center text-center">
+<div class="flex flex-col gap-3 max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-text-main dark:text-white">
+                            Track Your Order
+                        </h1>
+<p class="text-text-muted text-base md:text-lg font-normal leading-normal">
+                            Enter your order number to see current status, delivery updates, and shipment details.
+                        </p>
+</div>
+<div class="w-full max-w-xl mt-4">
+<div class="flex flex-col sm:flex-row w-full items-stretch rounded-xl h-14 shadow-sm bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary transition-all">
+<div class="flex-1 flex items-center px-4 gap-3">
+<span class="material-symbols-outlined text-text-muted">local_shipping</span>
+<input class="flex-1 bg-transparent border-none p-0 text-base text-text-main dark:text-white placeholder:text-text-muted focus:ring-0 focus:outline-none" placeholder="Order No. e.g. TM-883921" value="TM-883921"/>
+</div>
+<button class="m-1 px-8 rounded-lg bg-primary hover:bg-primary/90 text-white font-bold text-sm tracking-wide transition-colors">
+                                TRACK
+                            </button>
+</div>
+</div>
+</section>
+<!-- Results Section -->
+<div class="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+<!-- Order Status Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 md:p-8 shadow-sm border border-border-light dark:border-border-dark">
+<!-- Top Bar: Status & ETA -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">In Transit</span>
+<span class="text-text-muted text-sm">Order #TM-883921</span>
+</div>
+<h2 class="text-2xl md:text-3xl font-bold text-text-main dark:text-white">
+                                    Arriving by Thursday, Oct 24th
+                                </h2>
+</div>
+<div class="text-left md:text-right">
+<p class="text-text-muted text-sm font-medium">Carrier</p>
+<div class="flex items-center gap-2 md:justify-end mt-1">
+<span class="material-symbols-outlined text-text-main dark:text-white">local_shipping</span>
+<span class="text-text-main dark:text-white font-bold">FedEx Express</span>
+</div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="relative w-full mb-4">
+<div class="flex justify-between mb-2 text-sm font-medium text-text-muted">
+<span class="text-primary font-bold">Ordered</span>
+<span class="text-primary font-bold">Shipped</span>
+<span class="text-primary font-bold">Out for Delivery</span>
+<span class="">Delivered</span>
+</div>
+<div class="h-3 w-full bg-border-light dark:bg-border-dark rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full relative" style="width: 75%;">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-white/30 animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Two Column Detail Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column: Timeline -->
+<div class="lg:col-span-2 bg-surface-light dark:bg-surface-dark rounded-xl p-6 md:p-8 shadow-sm border border-border-light dark:border-border-dark">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span>
+                                Shipment Activity
+                            </h3>
+<div class="grid grid-cols-[40px_1fr] gap-x-3">
+<!-- Item 1 (Latest) -->
+<div class="flex flex-col items-center">
+<div class="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary z-10">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<div class="w-[2px] bg-border-light dark:bg-border-dark h-full min-h-[40px]"></div>
+</div>
+<div class="flex flex-col pb-8">
+<p class="text-text-main dark:text-white text-base font-bold leading-tight">Out for Delivery</p>
+<p class="text-text-muted text-sm mt-1">Oct 24 - 8:00 AM</p>
+<p class="text-text-main dark:text-white text-sm mt-1 font-medium">New York, NY</p>
+<p class="text-text-muted text-sm mt-1">Package is on the vehicle for delivery.</p>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col items-center">
+<div class="flex items-center justify-center size-8 rounded-full bg-border-light dark:bg-border-dark text-text-muted z-10">
+<span class="material-symbols-outlined text-[18px]">warehouse</span>
+</div>
+<div class="w-[2px] bg-border-light dark:bg-border-dark h-full min-h-[40px]"></div>
+</div>
+<div class="flex flex-col pb-8">
+<p class="text-text-main dark:text-white text-base font-bold leading-tight">Arrived at Facility</p>
+<p class="text-text-muted text-sm mt-1">Oct 23 - 4:00 PM</p>
+<p class="text-text-main dark:text-white text-sm mt-1 font-medium">Newark, NJ</p>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col items-center">
+<div class="flex items-center justify-center size-8 rounded-full bg-border-light dark:bg-border-dark text-text-muted z-10">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</div>
+<div class="w-[2px] bg-border-light dark:bg-border-dark h-full min-h-[40px]"></div>
+</div>
+<div class="flex flex-col pb-8">
+<p class="text-text-main dark:text-white text-base font-bold leading-tight">Shipped</p>
+<p class="text-text-muted text-sm mt-1">Oct 22 - 2:00 PM</p>
+<p class="text-text-main dark:text-white text-sm mt-1 font-medium">Distribution Center</p>
+</div>
+<!-- Item 4 (Oldest) -->
+<div class="flex flex-col items-center">
+<div class="flex items-center justify-center size-8 rounded-full bg-border-light dark:bg-border-dark text-text-muted z-10">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+</div>
+<div class="flex flex-col">
+<p class="text-text-main dark:text-white text-base font-bold leading-tight">Order Placed</p>
+<p class="text-text-muted text-sm mt-1">Oct 21 - 10:00 AM</p>
+<p class="text-text-main dark:text-white text-sm mt-1 font-medium">Online Store</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Details Summary -->
+<div class="flex flex-col gap-6">
+<!-- Items Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm border border-border-light dark:border-border-dark flex-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-4">Items in Shipment</h3>
+<div class="flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="flex gap-3 items-start">
+<div class="size-16 rounded-lg bg-gray-100 dark:bg-gray-800 bg-cover bg-center shrink-0 border border-border-light dark:border-border-dark" data-alt="Floral summer dress fashion item" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAk1uHaLYPGqzpfGkAPv8qB1IYnBV2msdhJFpjs6d1YKZgatYj9nvVTsAPufVNoteT238nXRO7UED7JFenGCDaDDJzmTtn_hZEm1bCoKBA8YVRznRiLSLuEuzUHWCfVvCj2a0FiVTeRCck_AApHyQEInRP_q1BShnCl6UZd0MhZ7V-_fmOfOSQcb6n3zvWEDMuJxoXVj-LQWyhJ-osqjsrjg_FP48qWIs8R2_2B-ztCiPNQVZ3UhtmZf1tJ0F1o11BF39eeTQfKjvE');"></div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-text-main dark:text-white leading-tight">Summer Floral Midi Dress</p>
+<p class="text-xs text-text-muted mt-1">Size: M • Qty: 1</p>
+<p class="text-sm font-medium text-text-main dark:text-white mt-1">$89.00</p>
+</div>
+</div>
+<div class="h-px bg-border-light dark:bg-border-dark w-full"></div>
+<!-- Item 2 -->
+<div class="flex gap-3 items-start">
+<div class="size-16 rounded-lg bg-gray-100 dark:bg-gray-800 bg-cover bg-center shrink-0 border border-border-light dark:border-border-dark" data-alt="Elegant wide brim summer hat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2Eyz_G-C-dPHpYOraB2Dz4HOHYUpO98Or8SNACf6x5zxXMxQ4LL7EpssMxHeQkYf4GxII8bxJOrjJ8yqu1uQ1plekZAZEerROWezl4ckQwUaw8AC9enwXL5Q42P13UWSeQGb2onuVtn0yQNXV4lB8rwwz0JOK4I_M7Zzrvl0lDT-y2F7INajWLBVrYYkrHcIGswHMcVfl5Vb4OZKbTH73FcPbfhnGFgryzGvXr5KJwZaJEv2VzF--z5oIEwlhHkA641gizVxIuBU');"></div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-text-main dark:text-white leading-tight">Elegant Wide Brim Hat</p>
+<p class="text-xs text-text-muted mt-1">Color: Beige • Qty: 1</p>
+<p class="text-sm font-medium text-text-main dark:text-white mt-1">$45.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Address Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm border border-border-light dark:border-border-dark">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-3">Shipping Details</h3>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-text-muted mt-0.5">location_on</span>
+<div class="flex flex-col text-sm text-text-main dark:text-white leading-relaxed">
+<span class="font-bold">Jane Doe</span>
+<span>123 Fashion Avenue, Apt 4B</span>
+<span>New York, NY 10012</span>
+<span>United States</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Support Section -->
+<div class="mt-8 border-t border-border-light dark:border-border-dark pt-8 pb-12">
+<div class="flex flex-wrap justify-center gap-6">
+<a class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-sm font-bold text-text-main dark:text-white hover:bg-background-light dark:hover:bg-background-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">help</span>
+                            Need Help?
+                        </a>
+<a class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-sm font-bold text-text-main dark:text-white hover:bg-background-light dark:hover:bg-background-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_return</span>
+                            Return Policy
+                        </a>
+<a class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-sm font-bold text-text-main dark:text-white hover:bg-background-light dark:hover:bg-background-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">mail</span>
+                            Contact Support
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sale Page - TOI N MOI</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b017cf",
+                        "background-light": "#f8f6f8",
+                        "background-dark": "#1e1121",
+                        "text-main": "#190e1b",
+                        "text-muted": "#8b4e97",
+                        "card-bg": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f1e7f3] bg-[#fbf8fc]/95 backdrop-blur-sm px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#190e1b]">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">diamond</span>
+</div>
+<h2 class="text-[#190e1b] text-xl font-bold leading-tight tracking-[-0.015em]">TOI N MOI</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-[#190e1b] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">New In</a>
+<a class="text-[#190e1b] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Clothing</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Sale</a>
+<a class="text-[#190e1b] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-[#190e1b] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Edits</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden lg:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#8b4e97] flex border-none bg-[#f1e7f3] items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#190e1b] focus:outline-0 focus:ring-0 border-none bg-[#f1e7f3] focus:border-none h-full placeholder:text-[#8b4e97] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#fbf8fc] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Login</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f1e7f3] text-[#190e1b] hover:bg-[#eaddf0] transition-colors gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 lg:hidden">
+<span class="material-symbols-outlined text-[#190e1b] text-[20px]">search</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f1e7f3] text-[#190e1b] hover:bg-[#eaddf0] transition-colors gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-[#190e1b] text-[20px]">person</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f1e7f3] text-[#190e1b] hover:bg-[#eaddf0] transition-colors gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 relative">
+<span class="material-symbols-outlined text-[#190e1b] text-[20px]">shopping_bag</span>
+<div class="absolute top-1 right-1 size-2 bg-primary rounded-full"></div>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex flex-col flex-1">
+<!-- Hero Section -->
+<div class="w-full bg-[#fbf8fc]">
+<div class="@container">
+<div class="p-0 sm:p-4 md:p-6 lg:px-10">
+<div class="flex min-h-[360px] md:min-h-[420px] lg:min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-none sm:rounded-xl items-center justify-center p-6 relative overflow-hidden group" data-alt="Abstract vibrant gradient background with fashion model silhouette overlay" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1grOP3BXWqnixudgJaE1-O-_KQ1q9O6bTE_7tWK_rmwfPoOAwuzr_adzZabpbB7HJeUfAdczzQ-TlXH1zEvMSdalBu42HQJBkAq2lWagb8OOLlmy5b4e_cfLjojwIJkUb3bTSdNIJNdczadRzGIlan2s5dCT9Lp4ZxNYUFdompSKCJUwCD2OlRPh0RFKgfi7a7X-bubDAYIY8nQl8LeNnZ2KglJRze31ZvD9iXxI0kflfuR5HOKmv3l6ZTiKCrrOczEvs6rBNRno");'>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+<div class="flex flex-col gap-4 text-center z-10 max-w-2xl">
+<span class="bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider w-fit mx-auto animate-pulse">Limited Time Only</span>
+<h1 class="text-white text-4xl md:text-5xl lg:text-7xl font-black leading-tight tracking-[-0.033em] drop-shadow-lg">
+                                    END OF SEASON SALE
+                                </h1>
+<h2 class="text-white text-base md:text-lg lg:text-xl font-medium leading-normal drop-shadow-md max-w-lg mx-auto">
+                                    Refresh your wardrobe with up to <span class="font-bold text-[#f1e7f3]">70% Off</span> our Summer Edit. Styles are moving fast.
+                                </h2>
+</div>
+<button class="z-10 flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-[#9a14b5] transition-all transform hover:scale-105 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-xl">
+<span>Shop Now</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="layout-container px-4 sm:px-6 lg:px-10 py-8 flex flex-col lg:flex-row gap-8 max-w-[1600px] mx-auto w-full">
+<!-- Sidebar Filters -->
+<aside class="hidden lg:flex w-64 flex-col gap-8 sticky top-24 h-fit shrink-0">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-text-main">Filters</h3>
+<button class="text-xs font-medium text-text-muted hover:text-primary">Clear All</button>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Category Filter -->
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-semibold text-text-main">Category</h4>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-gray-600 group-hover:text-primary transition-colors">All Sale</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-gray-600 group-hover:text-primary transition-colors">Dresses</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-gray-600 group-hover:text-primary transition-colors">Tops</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-gray-600 group-hover:text-primary transition-colors">Bottoms</span>
+</label>
+</div>
+</div>
+<!-- Price Range -->
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-semibold text-text-main">Price</h4>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-gray-600 group-hover:text-primary transition-colors">Under $50</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-gray-600 group-hover:text-primary transition-colors">$50 - $100</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-gray-600 group-hover:text-primary transition-colors">$100+</span>
+</label>
+</div>
+</div>
+<!-- Size -->
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-semibold text-text-main">Size</h4>
+<div class="grid grid-cols-4 gap-2">
+<button class="h-9 w-full rounded border border-gray-200 text-xs font-medium hover:border-primary hover:text-primary transition-colors">XS</button>
+<button class="h-9 w-full rounded border border-primary bg-primary/10 text-primary text-xs font-bold transition-colors">S</button>
+<button class="h-9 w-full rounded border border-gray-200 text-xs font-medium hover:border-primary hover:text-primary transition-colors">M</button>
+<button class="h-9 w-full rounded border border-gray-200 text-xs font-medium hover:border-primary hover:text-primary transition-colors">L</button>
+<button class="h-9 w-full rounded border border-gray-200 text-xs font-medium hover:border-primary hover:text-primary transition-colors">XL</button>
+</div>
+</div>
+<!-- Discount Level -->
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-semibold text-text-main">Discount</h4>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-4 rounded-lg border border-solid border-[#e3d0e7] p-3 cursor-pointer hover:bg-gray-50 transition-colors">
+<input class="h-4 w-4 border-2 border-[#e3d0e7] text-primary focus:ring-0 checked:border-primary" name="discount" type="radio"/>
+<div class="flex grow flex-col"><p class="text-[#190e1b] text-sm font-medium leading-normal">50% or more</p></div>
+</label>
+<label class="flex items-center gap-4 rounded-lg border border-solid border-[#e3d0e7] p-3 cursor-pointer hover:bg-gray-50 transition-colors">
+<input class="h-4 w-4 border-2 border-[#e3d0e7] text-primary focus:ring-0 checked:border-primary" name="discount" type="radio"/>
+<div class="flex grow flex-col"><p class="text-[#190e1b] text-sm font-medium leading-normal">30% or more</p></div>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid Section -->
+<div class="flex flex-col flex-1 gap-6">
+<!-- Chips Navigation (Mobile/Tablet Friendly) -->
+<div class="flex gap-3 pb-2 overflow-x-auto no-scrollbar scroll-smooth">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white pl-5 pr-5 shadow-sm transition-transform active:scale-95">
+<p class="text-sm font-bold leading-normal">All Sale</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-[#e3d0e7] hover:border-primary hover:text-primary pl-5 pr-5 transition-colors">
+<p class="text-[#190e1b] text-sm font-medium leading-normal">Dresses</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-[#e3d0e7] hover:border-primary hover:text-primary pl-5 pr-5 transition-colors">
+<p class="text-[#190e1b] text-sm font-medium leading-normal">Tops</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-[#e3d0e7] hover:border-primary hover:text-primary pl-5 pr-5 transition-colors">
+<p class="text-[#190e1b] text-sm font-medium leading-normal">Bottoms</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-[#e3d0e7] hover:border-primary hover:text-primary pl-5 pr-5 transition-colors">
+<p class="text-[#190e1b] text-sm font-medium leading-normal">Accessories</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-[#e3d0e7] hover:border-primary hover:text-primary pl-5 pr-5 transition-colors">
+<p class="text-[#190e1b] text-sm font-medium leading-normal">Shoes</p>
+</button>
+</div>
+<!-- Filter Bar (Mobile) & Sort -->
+<div class="flex items-center justify-between py-2">
+<p class="text-sm text-text-muted font-medium">Showing 128 results</p>
+<div class="flex gap-2">
+<button class="lg:hidden flex items-center gap-2 text-sm font-bold text-text-main bg-white border border-[#e3d0e7] px-4 py-2 rounded-lg">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                                Filter
+                            </button>
+<div class="relative group">
+<button class="flex items-center gap-2 text-sm font-bold text-text-main bg-white border border-[#e3d0e7] px-4 py-2 rounded-lg hover:border-primary transition-colors">
+                                    Sort by: Recommended
+                                    <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Products Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10">
+<!-- Product Card 1 -->
+<div class="group flex flex-col gap-3 relative">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+<div class="absolute top-3 left-3 z-10 bg-primary text-white text-xs font-bold px-2 py-1 rounded">-30%</div>
+<div class="absolute top-3 right-3 z-10 bg-white/80 p-1.5 rounded-full text-gray-400 hover:text-red-500 cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px] block">favorite</span>
+</div>
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Woman wearing floral midi dress in summer setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgpcoqEoUiT2DhT04HknJih7XdVFSts0JNeWvIn6dmF3xEE5sE75sEHLIK4tkCw5WzeIx2Zd3QnWv3u9Ohr4Bma5H-cyqDkQ62CZ2DFNIXeyNj2UCF4HGMf6koqVPSPctQM-5i_6aNTcJQk35_HweI0DOowt8ROQIqNWJsQzYw03vUh2K95niuUETn4NO4mL_2O97Ut_zw8U6SyCxxo8DjgHQoM2WCmCX4p3sVnpGue57gdxgdvmpUXwTvDQn18YkMTQpigPHj2iA"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white text-text-main font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-main font-medium text-base truncate">Floral Midi Summer Dress</h3>
+<div class="flex items-center gap-2">
+<span class="text-gray-400 line-through text-sm">$120.00</span>
+<span class="text-primary font-bold text-lg">$84.00</span>
+</div>
+<div class="flex gap-1 mt-1">
+<div class="size-3 rounded-full bg-[#E5D0C6] border border-gray-200"></div>
+<div class="size-3 rounded-full bg-[#3B3A38] border border-gray-200"></div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col gap-3 relative">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+<div class="absolute top-3 left-3 z-10 bg-black text-white text-xs font-bold px-2 py-1 rounded">HOT</div>
+<div class="absolute top-3 right-3 z-10 bg-white/80 p-1.5 rounded-full text-gray-400 hover:text-red-500 cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px] block">favorite</span>
+</div>
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Oversized beige blazer on model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB832uc9-gq7zYRzZkQm6Qb9enHgX3W4o0wWjM7s-cY9x9hu21q4funCJ5YbHETMdQIysNwElN8JlfDyT-BU6fZJA4M6LlS9obTZ1y3apTLbL2IdzfrgfvfCPlpNIF8GpIIfySodIWTFMyQzXTtLEt8uf007QN3c8v7tGrlfjxp85n86b0duodieMRDKD21KXla6zRI5CvgHwUWCPbry8tI_FhkVZxYPWy2AyGgj5wjGU3cE53EOSQ8uCcB_CzqZSh8Ydt8eLkPqZg"/>
+<div class="absolute bottom-16 left-3 bg-red-100 text-red-700 text-[10px] font-bold px-2 py-0.5 rounded border border-red-200 opacity-90">Low Stock</div>
+<button class="absolute bottom-4 left-4 right-4 bg-white text-text-main font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-main font-medium text-base truncate">Oversized Structured Blazer</h3>
+<div class="flex items-center gap-2">
+<span class="text-gray-400 line-through text-sm">$150.00</span>
+<span class="text-primary font-bold text-lg">$75.00</span>
+<span class="text-xs text-green-600 font-bold bg-green-100 px-1 rounded">-50%</span>
+</div>
+<div class="text-xs text-gray-500">2 colors</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col gap-3 relative">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+<div class="absolute top-3 left-3 z-10 bg-primary text-white text-xs font-bold px-2 py-1 rounded">-33%</div>
+<div class="absolute top-3 right-3 z-10 bg-white/80 p-1.5 rounded-full text-gray-400 hover:text-red-500 cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px] block">favorite</span>
+</div>
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Blue leather strappy sandals product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBufCAB44yd_3CZnWlSxy_n7t_TCDBun3Z3iyZ20D_2f0QWkMVrJV0Kl4AzzPH-dteUy-f8tX0pp_znWn4letJ-ur1M_7FgCt9BXV9W3ASHQzklba1qzw55ghTKdrJioovq_WIzad4pGDH4NP7l2GvgHq4U0Luia3PvbzIRglOv6S76qsWURLg0tlPhugpUIo1N6rvZgzpqxv6gbgsjyNH-TFLAfn6VGHhMua2PvhRVnfx9CiI0hYpSnCV1T7D4vMu8TOWOtuQ2oqI"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white text-text-main font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-main font-medium text-base truncate">Strappy Leather Sandals</h3>
+<div class="flex items-center gap-2">
+<span class="text-gray-400 line-through text-sm">$90.00</span>
+<span class="text-primary font-bold text-lg">$60.00</span>
+</div>
+<div class="flex gap-1 mt-1">
+<div class="size-3 rounded-full bg-[#1A73E8] border border-gray-200"></div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col gap-3 relative">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+<div class="absolute top-3 left-3 z-10 bg-primary text-white text-xs font-bold px-2 py-1 rounded">-40%</div>
+<div class="absolute top-3 right-3 z-10 bg-white/80 p-1.5 rounded-full text-gray-400 hover:text-red-500 cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px] block">favorite</span>
+</div>
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="White linen wide leg trousers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHpgWYrN2AyKQ3FR4pWCNsVByoOikTuVbJEFnvzRlHvprGe_uBG5woygWjaxI0sqGw2KSoqzwxvE8TlgUqj_zMBLwyyzp0_y8i-ZWoaY7ryAo18oItY_I5X4nYmYLOz9VU_8Ka13PbkNORlauPQ3BZYFeJ8k7d1vF1uwE2D36qGQXYC1-iMLhTQm9T5OZ86bBtLj_0Otkur2-L182JCU3iwF-4xHJn8cxR7GJiE1Qg4Zx6L2FxI-KWMSPbZoyvgXHD9hfJwb4SF5k"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white text-text-main font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-main font-medium text-base truncate">Linen Wide Leg Trousers</h3>
+<div class="flex items-center gap-2">
+<span class="text-gray-400 line-through text-sm">$110.00</span>
+<span class="text-primary font-bold text-lg">$66.00</span>
+</div>
+<div class="flex gap-1 mt-1">
+<div class="size-3 rounded-full bg-[#FFFFFF] border border-gray-200"></div>
+<div class="size-3 rounded-full bg-[#D2B48C] border border-gray-200"></div>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group flex flex-col gap-3 relative">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+<div class="absolute top-3 left-3 z-10 bg-primary text-white text-xs font-bold px-2 py-1 rounded">-25%</div>
+<div class="absolute top-3 right-3 z-10 bg-white/80 p-1.5 rounded-full text-gray-400 hover:text-red-500 cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px] block">favorite</span>
+</div>
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Silk crop top in emerald green" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOIyQfX5tPnFg4iu6tVc9UKEpop1mskreaYU8Szn7WJSCCT8F65T9afTWok1DVuc-bm45EY6UpOZJH0tY3CVT0jpGhXODkBHcQY0surq51ecSxm9m2DSGQzRnaap39_MFNIOTz7OWr2BvRZ-ttvOVj9rZraQa324cpCm66KCbYz4bnTu99VTbVS835WEMCbxuYnd-Adefvupm2ltLlcnf23vDR5n5hCW_Sn-8nUiMK3MrAD7zSskdciK0Br3gpa0nxNTl563vANmE"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white text-text-main font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-main font-medium text-base truncate">Silk Blend Crop Top</h3>
+<div class="flex items-center gap-2">
+<span class="text-gray-400 line-through text-sm">$60.00</span>
+<span class="text-primary font-bold text-lg">$45.00</span>
+</div>
+<div class="text-xs text-gray-500">1 color</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group flex flex-col gap-3 relative">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+<div class="absolute top-3 left-3 z-10 bg-black text-white text-xs font-bold px-2 py-1 rounded">FINAL SALE</div>
+<div class="absolute top-3 right-3 z-10 bg-white/80 p-1.5 rounded-full text-gray-400 hover:text-red-500 cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px] block">favorite</span>
+</div>
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Graphic t-shirt with modern print" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANfvpCzu_SJLYhwjglrK4R7uL8HxmwAlmkhwxGhj7be1aazIdWetVXAL1WfKBgsUNHxrzLNObDYMqlHjMyqc8B7X4sBZ97XbIHaf6DIdVwfgevBnSVof0c5AU9bmhYLPNRgKk4u-Z8Z1PPDtWt2XCAabYPerV_4yL5q15MDPciknB_2Ad9gOZdmpOeqBSeS85GSB4AynBPcw0EkUu2ht4sUlQuYpyvX9Q1yKUL0MdUhkDDfTRPu2UBZrW9YoKMoGbpqWcToi7sOgc"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white text-text-main font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-main font-medium text-base truncate">Graphic Cotton Tee</h3>
+<div class="flex items-center gap-2">
+<span class="text-gray-400 line-through text-sm">$45.00</span>
+<span class="text-primary font-bold text-lg">$22.50</span>
+<span class="text-xs text-green-600 font-bold bg-green-100 px-1 rounded">-50%</span>
+</div>
+<div class="text-xs text-gray-500">3 prints</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-12 mb-8">
+<button class="px-8 py-3 bg-white border border-gray-300 text-text-main font-bold rounded-lg hover:border-primary hover:text-primary hover:bg-gray-50 transition-all shadow-sm">
+                            Load More
+                        </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-[#e3d0e7] pt-16 pb-8">
+<div class="layout-container px-10 max-w-[1200px] mx-auto flex flex-col gap-12">
+<div class="flex flex-col md:flex-row justify-between gap-12">
+<div class="flex flex-col gap-4 max-w-sm">
+<div class="flex items-center gap-2 text-[#190e1b]">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined" style="font-size: 24px;">diamond</span>
+</div>
+<h2 class="text-[#190e1b] text-lg font-bold leading-tight tracking-[-0.015em]">TOI N MOI</h2>
+</div>
+<p class="text-sm text-gray-500 leading-relaxed">
+                            Join our newsletter and be the first to know about new collections and exclusive offers.
+                        </p>
+<form class="flex gap-2">
+<input class="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:border-primary focus:ring-0" placeholder="Your email address" type="email"/>
+<button class="bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">Subscribe</button>
+</form>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-sm uppercase tracking-wide text-text-main">Shop</h4>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">New In</a>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Clothing</a>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Sale</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-sm uppercase tracking-wide text-text-main">Help</h4>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Shipping</a>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Returns</a>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Sizing</a>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-sm uppercase tracking-wide text-text-main">Social</h4>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">TikTok</a>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Pinterest</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-xs text-gray-400">© 2024 TOI N MOI. All rights reserved.</p>
+<div class="flex gap-4">
+<span class="text-xs text-gray-400">Privacy Policy</span>
+<span class="text-xs text-gray-400">Terms of Service</span>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

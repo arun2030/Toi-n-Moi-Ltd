@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  /* Custom Colors */
+  --contrast: #000000;
+  --primary: #1a1a1a;
+  --secondary: #f4f4f5;
+  /* Zinc 100-ish */
+  --bg-color: #ffffff;
+
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Added Colors */
+  --color-contrast: var(--contrast);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+  /* Added Fonts */
+  --font-sans: 'Avenir', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-heading: 'Avenir', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+:root {
+  /* Shopify Theme Variables (Manually Injected) */
+  --COLOR-ANNOUNCEMENT-BG: #f7f5f4;
+  --COLOR-ANNOUNCEMENT-TEXT: #424242;
+  --COLOR-HEADER-BG: #ffffff;
+  --COLOR-HEADER-TEXT: #000000;
+  --COLOR-NAV-BORDER: #f7f5f4;
+
+  --COLOR-BG: #ffffff;
+  --COLOR-TEXT: #424242;
+  --COLOR-PRIMARY: #d2815f;
+  --COLOR-SECONDARY: #748cab;
+
+  --COLOR-BG-LIGHT: #f7f5f4;
+  --COLOR-BG-INVERSE: #424242;
+  --COLOR-TEXT-INVERSE: #ffffff;
+  --COLOR-PRIMARY-INVERSE: #d2815f;
+  --COLOR-SECONDARY-INVERSE: #748cab;
+
+  --COLOR-BG-ACCENT-INVERSE: #1d1d1d;
+
+  --COLOR-BG-BRIGHT: #d2815f;
+  --COLOR-TEXT-BRIGHT: #ffffff;
+  --COLOR-PRIMARY-BRIGHT: #ff763d;
+  --COLOR-SECONDARY-BRIGHT: #3d5aff;
+
+  --COLOR-BG-ACCENT-BRIGHT: #94553a;
+
+  --COLOR-FOOTER-BG: #424242;
+  --COLOR-FOOTER-TEXT: #ffffff;
+  --COLOR-SUB-FOOTER-BG: #1d1d1d;
+  --COLOR-SUB-FOOTER-TEXT: #dfdfdf;
+
+  /* Fonts */
+  --FONT-STACK-HEADING: 'Libre Baskerville', serif;
+  --FONT-STACK-BODY: 'Poppins', sans-serif;
+  --FONT-STACK-ACCENT: 'Montserrat', sans-serif;
+
+  --FONT-HEADING-SIZE: 100px;
+  /* Scaling factor usually */
+  --FONT-BODY-SIZE: 100px;
+
+  /* Layout */
+  --LAYOUT-SITE-WIDTH: 1450px;
+  --LAYOUT-GUTTER: 24px;
+  --BUTTON-RADIUS: 2px;
+
+  /* --- 1. Colors (Black & White Theme) --- */
+  --COLOR-BG: #ffffff;
+  --COLOR-BG-ACCENT: #f7f7f7;
+  --COLOR-TEXT: #000000;
+  --COLOR-TEXT-DARK: #000000;
+  --COLOR-TEXT-LIGHT: #666666;
+
+  /* Header Specifics */
+  --COLOR-NAV: #ffffff;
+  --COLOR-NAV-TEXT: #000000;
+  --COLOR-NAV-BORDER: #e5e5e5;
+  --COLOR-ANNOUNCEMENT-BG: #000000;
+  --COLOR-ANNOUNCEMENT-TEXT: #ffffff;
+
+  /* --- 2. Typography Scale (The missing "Math") --- */
+  --font-1: 10px;
+  --font-2: 12px;
+  --font-3: 14px;
+  /* Standard Body Text */
+  --font-4: 16px;
+  --font-5: 18px;
+  --font-6: 20px;
+  --font-7: 24px;
+  --font-8: 32px;
+  --font-9: 40px;
+  --font-10: 48px;
+
+  /* Font Adjustments (Must be 1 for math to work) */
+  --FONT-ADJUST-BODY: 1;
+  --FONT-ADJUST-HEADING: 1;
+  --FONT-ADJUST-ACCENT: 1;
+  --FONT-ADJUST-NAV: 1;
+
+  /* Font Stacks */
+  --FONT-STACK-BODY: "Century Gothic", sans-serif;
+  --FONT-STACK-HEADING: "Century Gothic", sans-serif;
+  --FONT-STACK-NAV: "Century Gothic", sans-serif;
+
+  /* --- 3. Layout Dimensions --- */
+  --header-height: 80px;
+  --menu-height: 80px;
+  --LAYOUT-WIDTH: 1400px;
+  --LAYOUT-GUTTER: 20px;
+  --outer: 20px;
+  --inner: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    /* Keeping light theme as default for now based on reference, or override if needed. User asked to "recreate design", usually implies visual parity. Shopify themes are often light. I'll stick to light default but keep vars if they want dark later. actually let's force light for exact recreation unless specified */
+    --foreground: #171717;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

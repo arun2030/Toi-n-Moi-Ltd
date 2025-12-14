@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Newsletter Signup - Toi-n-Moi</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b017cf",
+                        "background-light": "#f8f6f8",
+                        "background-dark": "#1e1121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom utilities if needed */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white overflow-hidden relative min-h-screen flex flex-col">
+<!-- BACKGROUND CONTENT (Simulating the underlying website) -->
+<!-- This section is blurred and slightly obscured to focus on the modal -->
+<div aria-hidden="true" class="flex-1 flex flex-col opacity-40 pointer-events-none select-none blur-[2px] transition-all duration-500">
+<!-- Fake Nav -->
+<header class="flex items-center justify-between px-8 py-5 border-b border-gray-200 dark:border-white/10 bg-background-light dark:bg-background-dark">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl">menu</span>
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<div class="text-2xl font-black tracking-tighter">TOI-N-MOI</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</div>
+</header>
+<!-- Fake Hero -->
+<main class="flex-1 p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 relative rounded-xl overflow-hidden bg-gray-200 h-[600px]">
+<img class="w-full h-full object-cover" data-alt="Fashion model walking in shopping mall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3ztwlwsG1HBzbdXOBYpH62HqrdngwN3yUqMqQNA3tdJfDb5Y7haSbA-aQHEq7vMpbAAXLJbjPoWS0C6S7GcNxod9GorTIBAteOUSgn1EkgV-6gWfAYzkA6XDPGDKO0fvl2MdFWHUUwr1RL1Otr9RBb_zvoJ40Zj_QW7yZB8jfrRdnc1p0f-aHO6H7lyvOfFKNMwVPatj2xXzUZ0oo32f6UC1dbYt6cvRu45QHewBEs3JFkls2fkjyLGJ0JhmoWGHjEhIattB1NSU"/>
+<div class="absolute bottom-8 left-8 text-white">
+<h2 class="text-4xl font-bold mb-2">New Season</h2>
+<p class="text-lg">Discover the collection</p>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 rounded-xl p-4 h-80 flex flex-col justify-between">
+<div class="bg-gray-100 dark:bg-white/10 w-full h-48 rounded-lg mb-4 bg-cover bg-center" data-alt="Woman in yellow sweater" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDo9vVhMJLfWTje7berWQ8O79nWjl5YIFGEC7A5AhzAKfPom8JQ3Rt1UkRj7ed3gzdUef7QFVpgsWc5N5pboKnWQa_MS5Hs_JvLLOVpwzpLqRUk3NzbFGy9lPObFN_DRVO89RTMKnhZ8rqwC2MaVNDBZ5wtYjEwBlibK0qHkUuJL-BxsPoZivKmZWxuPMbx2airaItI-dWU0sLI8j5g6ThTKfvCm14Ei1bTmD3ZMhmbIMCV120-rqMCB1pyxHtoLIv6Y9TdWZ7U05k')"></div>
+<div>
+<p class="font-bold">Sunny Knitwear</p>
+<p class="text-primary font-medium">$129.00</p>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 rounded-xl p-4 h-80 flex flex-col justify-between">
+<div class="bg-gray-100 dark:bg-white/10 w-full h-48 rounded-lg mb-4 bg-cover bg-center" data-alt="Stylish shoes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBW4P0HAnlYL8xFqmX8lJDwyt1Tq5b6UplvGHfmSGZEaQ9EULmvtisEyxoqjBZzfLilNyByU0DiQm97V--TkZn6yG0TaG8QgHPeOu6K49dlc0ULXIjxfZ3nny2bXGFnmCaLurOTFAHcv-TZ1gPxvKpX9H3Abu_JAeL3xsO0WmoZdxsjxHVchTDKUx_4tGE3WnQPn1nHVqfwt3PitAjVOrOfq4kKzepP8zkm8zdseg9hnraaBtBQXw7amY6Y849iTXyTuYoiZzrwLbA')"></div>
+<div>
+<p class="font-bold">Urban Walkers</p>
+<p class="text-primary font-medium">$89.00</p>
+</div>
+</div>
+</main>
+</div>
+<!-- MODAL OVERLAY -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" role="dialog">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
+<!-- Modal Content -->
+<div class="relative w-full max-w-[960px] transform overflow-hidden rounded-2xl bg-background-light dark:bg-background-dark shadow-2xl transition-all flex flex-col md:flex-row max-h-[90vh] md:max-h-[600px]">
+<!-- Left Side: Image -->
+<div class="relative w-full md:w-5/12 lg:w-1/2 h-64 md:h-auto overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Fashion editorial shot of a woman in a floral dress" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnvjrzHY6afdEa95I91kHvOsBgSTI6L06d7210D5BBUXK32IIw4323Zf1lWvnW-EXwcZStXkNlbWW-eGMolv58CDZQH0JKV21G48cluONyxmekbIiwsms8iYaCfNsTFHN_AFcRhP5_RDgYKoWsp2GPHDETAH5GHNuf0e5nm6n_rt3_HAIQWpkAzobC6slrULKFPO9oBTR_T3fK48fn4vqmJJnVAI4tzVHqlwji6hQGrbzC085Tx0g7m9i5BQI7ddYuLEOftUUi9DY');">
+</div>
+<!-- Gradient Overlay for text readability if we had text on image, mostly aesthetic here -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/10"></div>
+<!-- Brand Mark on Image -->
+<div class="absolute top-6 left-6 text-white font-black tracking-tighter text-xl hidden md:block">
+                    TOI-N-MOI
+                </div>
+</div>
+<!-- Right Side: Content -->
+<div class="w-full md:w-7/12 lg:w-1/2 flex flex-col relative bg-background-light dark:bg-background-dark">
+<!-- Close Button -->
+<button class="absolute right-4 top-4 p-2 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded-full hover:bg-black/5 dark:hover:bg-white/10 z-10 focus:outline-none focus:ring-2 focus:ring-primary" type="button">
+<span class="material-symbols-outlined">close</span>
+<span class="sr-only">Close</span>
+</button>
+<div class="flex-1 flex flex-col justify-center px-8 py-10 sm:px-12 md:py-12 overflow-y-auto">
+<div class="flex flex-col gap-1 mb-8">
+<p class="text-primary text-sm font-bold tracking-widest uppercase mb-2">Join the Club</p>
+<h2 class="text-gray-900 dark:text-white text-4xl md:text-5xl font-extrabold leading-[0.95] tracking-tight mb-4" id="modal-title">
+                            UNLOCK<br/>10% OFF
+                        </h2>
+<p class="text-gray-600 dark:text-gray-300 text-base md:text-lg font-medium leading-relaxed max-w-sm">
+                            Be the first to know about new arrivals, exclusive sales, and behind-the-scenes content.
+                        </p>
+</div>
+<!-- Signup Form -->
+<form class="flex flex-col gap-5 w-full max-w-[400px]">
+<!-- Input Field -->
+<div class="relative group">
+<label class="sr-only" for="email-address">Email Address</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-[#8b4e97] dark:text-primary pointer-events-none">mail</span>
+<input class="form-input flex w-full min-w-0 resize-none overflow-hidden rounded-xl text-[#190e1b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#e3d0e7] dark:border-white/10 bg-white dark:bg-white/5 focus:border-primary h-14 placeholder:text-[#8b4e97]/70 dark:placeholder:text-gray-400 pl-12 pr-4 text-base font-normal leading-normal transition-all" id="email-address" placeholder="Enter your email address" required="" type="email"/>
+</div>
+</div>
+<!-- Action Button -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all text-[#fbf8fc] text-base font-bold leading-normal tracking-[0.05em] shadow-lg shadow-primary/20" type="submit">
+<span class="truncate">GET MY CODE</span>
+<span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</button>
+</form>
+<!-- Footer Links -->
+<div class="mt-8 flex flex-col items-center gap-3 text-center">
+<button class="text-[#8b4e97] dark:text-primary/80 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal underline decoration-primary/30 underline-offset-4 hover:decoration-primary transition-all">
+                            No thanks, I prefer paying full price.
+                        </button>
+<p class="text-gray-400 dark:text-gray-500 text-xs font-normal leading-normal">
+                            By signing up, you agree to our <a class="underline hover:text-gray-600 dark:hover:text-gray-300" href="#">Privacy Policy</a>.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

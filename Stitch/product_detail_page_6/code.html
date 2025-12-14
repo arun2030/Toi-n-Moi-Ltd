@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Detail Page - TOI &amp; MOI</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41132",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221013",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e7eb;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d1d5db;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #374151;
+        }
+        
+        /* Hide scrollbar for x-overflow containers */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b0d10] dark:text-gray-100 font-display transition-colors duration-300">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 w-full border-b border-[#f3e7e9] dark:border-[#3a2024] bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm transition-colors">
+<div class="flex items-center justify-between px-6 lg:px-10 py-4 max-w-[1440px] mx-auto">
+<!-- Logo Section -->
+<div class="flex items-center gap-4">
+<div class="text-primary">
+<span class="material-symbols-outlined text-[28px]">local_mall</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight text-[#1b0d10] dark:text-white">TOI &amp; MOI</h2>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden lg:flex items-center gap-10">
+<a class="text-sm font-bold uppercase tracking-wider text-[#1b0d10] dark:text-gray-200 hover:text-primary transition-colors" href="#">New In</a>
+<a class="text-sm font-bold uppercase tracking-wider text-[#1b0d10] dark:text-gray-200 hover:text-primary transition-colors" href="#">Clothing</a>
+<a class="text-sm font-bold uppercase tracking-wider text-[#1b0d10] dark:text-gray-200 hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-sm font-bold uppercase tracking-wider text-primary" href="#">Sale</a>
+</nav>
+<!-- Utility Icons -->
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#f3e7e9] dark:hover:bg-[#3a2024] transition-colors">
+<span class="material-symbols-outlined text-[#1b0d10] dark:text-white text-[24px]">search</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#f3e7e9] dark:hover:bg-[#3a2024] transition-colors">
+<span class="material-symbols-outlined text-[#1b0d10] dark:text-white text-[24px]">person</span>
+</button>
+<button class="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#f3e7e9] dark:hover:bg-[#3a2024] transition-colors group">
+<span class="material-symbols-outlined text-[#1b0d10] dark:text-white text-[24px]">shopping_bag</span>
+<span class="absolute top-1 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">0</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+<!-- Left Column: Image Gallery (Vertical Grid) -->
+<div class="lg:col-span-7">
+<div class="grid grid-cols-2 gap-2">
+<div class="col-span-2 sm:col-span-1 aspect-[3/4] w-full bg-gray-200 rounded-lg overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Woman wearing floral maxi dress front view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBt310sulxDC-8yrm8bCWOUEEfau_JAVIcnBRCOb0eOFqKxDounQubrlQHLc7AmL1ZDnmWiBf7hj-7Jz79WWdHHwjA6zPdVSTBKSuh-JVWAWyPKdeeo37oa0-xV-Sv4bxb4otcZhOzNmuMdg1O100MElvRC1im8nWQcbXb3JWh0aMWWv-sKGv3OTzpNVuj3mxt98MtljYIvG46fRdyJMrem5v9lMCp7E6uxEKNntVUzDnuYhZfvM0Dfxw9grOUyWneeToQ-TKqV_vQ');"></div>
+</div>
+<div class="col-span-2 sm:col-span-1 aspect-[3/4] w-full bg-gray-200 rounded-lg overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Detailed close up of floral fabric texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSYqL4EchNTPIUpaus5X4hwnrmYSCZY3gqoIS3UBtr6y-JBB0kwWWizMHQrcze0jaAAglHPAytZUNyQFSKAwKhzeEQORzo6e039xintn_Yfdii5eCgEDcgUmVfvnBOuyNKGKSJEkM6_kRD2sfCEkzZkN5N-UNZLXgh8g7VwSksQsExUhQWtOcpLp2OovPTiYZeWyJ75cGdey8_qavLfhC7trE5r9Z26g2_TATGIrxQzYHRp-LnL4nsCZbbVSkf0OkbkG9yNUSVZdU');"></div>
+</div>
+<div class="col-span-2 aspect-[3/4] sm:aspect-[16/10] w-full bg-gray-200 rounded-lg overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-top transition-transform duration-700 hover:scale-105" data-alt="Woman in dress walking in sunny field" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUhfCr-UDYoR6NLnNsDZFtVyt-2qgInfCJXhmBXp_xSQB5sohmJb1n_6s_-RMYqBFxL331zkJxLgCSlTgk0Ve4GETN-qFwrjr9J0wEsfnVFjiMn4ubv6A-zP1ZTRB3C6gPg4vF806JbOS9a3EuBcB7GxjfIgOfa1Jv1UjjIA51yv22MzDgaXyjmQQVBYdZtw7SgCRpEjKpr_G9hF6g-ljaEEbLm8an3tHrIEhRLhtotJhpoDAiK6Pvyzv1EgBXNXkEMpEA9NzLTXk');"></div>
+</div>
+<div class="col-span-2 sm:col-span-1 aspect-[3/4] w-full bg-gray-200 rounded-lg overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Back view of the bohemian maxi dress" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-RwXf_OfFBdSa4uE7uo_a8UbW5wKtiyxqdl3dCCnaGOqFA6Ws_FHVPTdQ10jdO9dvCxFp4Jw6zBlMme8QMPI1x2sR6fPNOEWKUL9Io8OUpXYhbDt8p-GCSWlSWBtm91p89ATyv1XcYErMYbAYCXFA4tn6BrA2tIIn-blB3jF1f8bmL0WolJ1CrW7CGmobD-3OgA72lerdWmhDnSGRGoZLRuH4imWsbFcNM16_EUheefn2MLqKwOp9fYXDbrwICf_qjLEyK66HMR4');"></div>
+</div>
+<div class="col-span-2 sm:col-span-1 aspect-[3/4] w-full bg-gray-200 rounded-lg overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Model posing sideways in floral dress" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNnQPeW8memx-LVR-Rvjb4uPVFQhlVDoHILNn-J56uMUiZRmlsDDU6RELwPlcO0l2IEvaKrtrOmbT8Tbal2TTy2whNbGeNUkzSIT3V1HwBDymBNm1iIzLZQJCRgE2e7htW-UjAIpfVYgOyzOyGPwYjcg7pGBgGX60ewvD2NpaxqwXLBE0kQrXtU5AZvqwwptgQF8iHki8_4XwBWgVGDbc33nSIBv-oQsJGSRuiJl6d3rVl0KUOLQNoApn7HRW-ON-ZxZewroRBGHg');"></div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sticky Product Info -->
+<div class="lg:col-span-5 relative">
+<div class="sticky top-28 flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Clothing</a>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Dresses</a>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="text-[#1b0d10] dark:text-white">Maxi</span>
+</nav>
+<!-- Header & Price -->
+<div class="border-b border-[#f3e7e9] dark:border-[#3a2024] pb-6">
+<div class="flex justify-between items-start gap-4">
+<h1 class="text-3xl lg:text-4xl font-extrabold text-[#1b0d10] dark:text-white leading-tight">The Bohemian Maxi Dress</h1>
+<button class="text-gray-400 hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-3 mt-4">
+<span class="text-2xl font-bold text-primary">$120.00</span>
+<span class="text-sm text-gray-500 line-through">$185.00</span>
+<span class="text-xs font-bold text-white bg-primary px-2 py-0.5 rounded">SAVE 35%</span>
+</div>
+<p class="mt-4 text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+                            Flowing silhouette with floral print. Featuring a V-neckline, long sleeves with elastic cuffs, and a ruffled hem. Perfect for your next getaway.
+                        </p>
+</div>
+<!-- Selectors -->
+<div class="flex flex-col gap-6">
+<!-- Color Selector -->
+<div>
+<div class="flex justify-between mb-3">
+<span class="text-sm font-bold uppercase tracking-wider text-[#1b0d10] dark:text-gray-200">Color</span>
+<span class="text-sm text-gray-500">Red Pattern</span>
+</div>
+<div class="flex gap-3">
+<button aria-label="Select Red Pattern" class="w-10 h-10 rounded-full bg-[#d41132] border-2 border-white ring-2 ring-primary focus:outline-none"></button>
+<button aria-label="Select Blue Pattern" class="w-10 h-10 rounded-full bg-[#1e3a8a] border-2 border-transparent hover:border-white ring-2 ring-transparent hover:ring-gray-300 focus:outline-none transition-all"></button>
+<button aria-label="Select Green Pattern" class="w-10 h-10 rounded-full bg-[#10b981] border-2 border-transparent hover:border-white ring-2 ring-transparent hover:ring-gray-300 focus:outline-none transition-all"></button>
+</div>
+</div>
+<!-- Size Selector -->
+<div>
+<div class="flex justify-between mb-3">
+<span class="text-sm font-bold uppercase tracking-wider text-[#1b0d10] dark:text-gray-200">Size</span>
+<a class="text-xs font-medium underline text-gray-500 hover:text-primary" href="#">Size Guide</a>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="h-12 border border-[#f3e7e9] dark:border-[#3a2024] rounded-lg text-sm font-bold text-gray-400 cursor-not-allowed bg-gray-50 dark:bg-transparent" disabled="">XS</button>
+<button class="h-12 border border-[#f3e7e9] dark:border-[#3a2024] rounded-lg text-sm font-bold text-[#1b0d10] dark:text-white hover:border-primary dark:hover:border-primary transition-colors">S</button>
+<button class="h-12 border-2 border-primary rounded-lg text-sm font-bold text-primary bg-primary/5">M</button>
+<button class="h-12 border border-[#f3e7e9] dark:border-[#3a2024] rounded-lg text-sm font-bold text-[#1b0d10] dark:text-white hover:border-primary dark:hover:border-primary transition-colors">L</button>
+</div>
+</div>
+<!-- Add to Cart Button -->
+<div class="pt-2">
+<button class="w-full bg-primary hover:bg-[#b00e29] text-white h-14 rounded-lg font-bold text-base uppercase tracking-widest transition-all transform active:scale-[0.98] flex items-center justify-center gap-3 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">shopping_bag</span>
+                                Add to Cart
+                            </button>
+<div class="flex items-center justify-center gap-2 mt-3 text-xs text-gray-500">
+<span class="material-symbols-outlined text-[16px] text-green-600">check_circle</span>
+<span>In stock, ready to ship</span>
+</div>
+</div>
+</div>
+<!-- Accordions Details -->
+<div class="mt-4 border-t border-[#f3e7e9] dark:border-[#3a2024]">
+<!-- Item 1 -->
+<details class="group py-4 border-b border-[#f3e7e9] dark:border-[#3a2024] cursor-pointer">
+<summary class="flex items-center justify-between font-bold text-sm uppercase tracking-wide text-[#1b0d10] dark:text-gray-200 list-none">
+                                Description
+                                <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="pt-3 text-sm text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+<p>Embrace the free-spirited vibe with our Bohemian Maxi Dress. Crafted from lightweight viscose, this dress moves with you.</p>
+<ul class="list-disc list-inside mt-2 space-y-1">
+<li>V-neckline with tie detail</li>
+<li>Elasticated waist for comfort</li>
+<li>Tiered skirt design</li>
+<li>Model is 5'9" and wears size S</li>
+</ul>
+</div>
+</details>
+<!-- Item 2 -->
+<details class="group py-4 border-b border-[#f3e7e9] dark:border-[#3a2024] cursor-pointer">
+<summary class="flex items-center justify-between font-bold text-sm uppercase tracking-wide text-[#1b0d10] dark:text-gray-200 list-none">
+                                Composition &amp; Care
+                                <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="pt-3 text-sm text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+<p>100% Viscose (LENZING™ ECOVERO™).</p>
+<p class="mt-2">Machine wash cold gentle cycle. Do not bleach. Line dry. Cool iron if needed.</p>
+</div>
+</details>
+<!-- Item 3 -->
+<details class="group py-4 border-b border-[#f3e7e9] dark:border-[#3a2024] cursor-pointer">
+<summary class="flex items-center justify-between font-bold text-sm uppercase tracking-wide text-[#1b0d10] dark:text-gray-200 list-none">
+                                Shipping &amp; Returns
+                                <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="pt-3 text-sm text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+<p>Free standard shipping on orders over $150. Returns accepted within 30 days of purchase. Items must be unworn and with original tags.</p>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<!-- Cross-Sell / Recommendation Section -->
+<section class="mt-20 lg:mt-32 mb-10">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold text-[#1b0d10] dark:text-white">Complete the Look</h3>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-[#f3e7e9] dark:border-[#3a2024] flex items-center justify-center hover:bg-[#f3e7e9] dark:hover:bg-[#3a2024] transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-[#f3e7e9] dark:border-[#3a2024] flex items-center justify-center hover:bg-[#f3e7e9] dark:hover:bg-[#3a2024] transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-lg bg-gray-100">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Blue denim heels on concrete" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrEVsDzQyj5Yxj7XFoTPbmnFrUJ6YrbJD31jM-HN1UmyrjHTPCNKT3ErVBzcs6AlTvQfSZ9LVxUVSI9KIflQPKXNGXP8D5M3dHWKTv16ST-I3n9541_vfsX6DPkL9QUHh6Vqpu9qsY0G5DE_3fkD-YbYiI8XNVESuTy9GeO9YB5qOAjJVmJxtNssvfktZcqIZowJAy3r__gVr4drN53X5O34MWNR_6REU39mLJSbY7nMUCT3Q9dwHcU6GagC-vZk2MX5NiONnsBD4');"></div>
+<button class="absolute bottom-3 right-3 w-8 h-8 bg-white dark:bg-background-dark rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-3">
+<h4 class="text-sm font-medium text-[#1b0d10] dark:text-gray-200 truncate">Strappy Denim Heels</h4>
+<p class="text-sm font-bold text-[#1b0d10] dark:text-white mt-1">$89.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-lg bg-gray-100">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Woven straw tote bag on sand" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGGt4kymcVnOINaNhwRZM-bdi05FKlmNhXthH2YdUzOdJjAeYSDQ7x5E7CCip7cnamOmBq7JnyuCTKGT6YzEBQiN3qEYjKsfRE08ERkpe1AxkwOGTxKgLgp0h9PZS8qHtjVZ2gUC76bHDHWRLbt1-1BXMHYlbJ90wJmlYi5oQ0TVI7dLj4GuD4h3_A3a5YO3WyDsdTTAIkO1-8BhgSMtJO-7rUuAgdYepDHwiYf7i7bKtKXg44-qUnxxT72w9p-5Rdo8HE_sjPqcY');"></div>
+<button class="absolute bottom-3 right-3 w-8 h-8 bg-white dark:bg-background-dark rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-3">
+<h4 class="text-sm font-medium text-[#1b0d10] dark:text-gray-200 truncate">Woven Tote Bag</h4>
+<p class="text-sm font-bold text-[#1b0d10] dark:text-white mt-1">$55.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-lg bg-gray-100">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Gold pendant necklace on white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3KZy16AfXhfCgGje9ki0dxafPQFJzSL0r55jtB6T-o2E4un3lEWNz6-TRJv33LW_LlpwNgbrO7-mYcF797dCL1JhY-rTIC9PGP1DjN91QVqIZm-dPMQlXIXBESJrNtgSX3CTRXARBhFNwBIElrzcrWN8VE7ZZ0N_MtD4Kiqbt2jgbErGLIOAv2Vl6xtT63TYkB_hYPPhS7X46PjspbRYjqYLJrsegJAdlEEBM_ujMvXIGz65MFre4-Lc7mvqb1kNLKS_iBS7Kh8c');"></div>
+<div class="absolute top-2 left-2 bg-[#d41132] text-white text-[10px] font-bold px-2 py-1 rounded">NEW</div>
+<button class="absolute bottom-3 right-3 w-8 h-8 bg-white dark:bg-background-dark rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-3">
+<h4 class="text-sm font-medium text-[#1b0d10] dark:text-gray-200 truncate">Gold Sun Pendant</h4>
+<p class="text-sm font-bold text-[#1b0d10] dark:text-white mt-1">$45.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-lg bg-gray-100">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Pair of white sneakers on asphalt" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEud_7ayuANlPSjgdOIFA-B493LfrplC_DVHCOfqdErpVTG_otn2dxkhtW9tZls_yfhr5lHQmXyXWLIVqSI8ubKhxsJUvAxJ_AWtaLimBBfb-KwTcpme8PpTqaZdi2nqTIYOJ3y1kxSi_dnlc92-02EHFfngxuvHTDMzO12EmurN16TTh4c1dkVWWVD3WUTcN20sK274kDy2H7Hx8HR8p7ODhdWBMwtOvMXl9IvofhiBUKZNcYTyeu2Xit3owI1oUbdv_wr1XHrXs');"></div>
+<button class="absolute bottom-3 right-3 w-8 h-8 bg-white dark:bg-background-dark rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-3">
+<h4 class="text-sm font-medium text-[#1b0d10] dark:text-gray-200 truncate">Classic White Sneakers</h4>
+<p class="text-sm font-bold text-[#1b0d10] dark:text-white mt-1">$95.00</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

@@ -1,0 +1,43 @@
+:root {
+    /* Pipeline Theme Variables */
+
+    /* Text Colors */
+    --COLOR-TEXT: #424242;
+    --COLOR-BODY-TEXT: #424242;
+    --COLOR-HEADING: #424242;
+    /* Assuming same as body/announcement text if not explicit */
+
+    /* Background Colors */
+    --COLOR-BG: #ffffff;
+    --COLOR-BODY-BG: #ffffff;
+    --COLOR-HEADER-BG: #ffffff;
+    --COLOR-BG-LIGHT: #f7f5f4;
+    --COLOR-BG-ACCENT: #d2815f;
+
+    /* Brand Colors */
+    --COLOR-PRIMARY: #d2815f;
+    --COLOR-SECONDARY: #748cab;
+    --COLOR-ACCENT: #d2815f;
+
+    /* Links & Buttons */
+    --COLOR-LINK: #424242;
+    --COLOR-LINK-HOVER: #d2815f;
+    --COLOR-BUTTON-BG: #d2815f;
+    --COLOR-BUTTON-TEXT: #ffffff;
+
+    /* Borders */
+    --COLOR-BORDER: #f7f5f4;
+    --COLOR-NAV-BORDER: #f7f5f4;
+
+    /* Typography */
+    --FONT-STACK-BODY: 'Poppins', sans-serif;
+    --FONT-STACK-HEADING: 'Libre Baskerville', serif;
+    --FONT-STACK-ACCENT: 'Montserrat', sans-serif;
+
+    --FONT-BODY-SIZE: 16px;
+    --FONT-HEADING-SIZE: 32px;
+
+    /* Layout */
+    --LAYOUT-SITE-WIDTH: 1450px;
+    --LAYOUT-GUTTER: 24px;
+}

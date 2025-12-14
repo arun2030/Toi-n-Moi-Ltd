@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Information - Toi &amp; Moi</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b411d4",
+                        "background-light": "#f8f6f8",
+                        "background-dark": "#1f1022",
+                        "border-light": "#e3cfe7",
+                        "text-dark": "#190d1b",
+                        "text-purple": "#8d4c9a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-dark dark:text-white font-display antialiased selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-solid border-border-light bg-background-light/95 backdrop-blur-md px-6 py-4 dark:bg-background-dark/95 dark:border-gray-800 lg:px-40">
+<div class="flex items-center gap-4 text-text-dark dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-text-dark dark:text-white">Toi &amp; Moi</h2>
+</div>
+<div class="hidden flex-1 justify-end gap-8 md:flex">
+<nav class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal text-text-dark hover:text-primary dark:text-gray-300 dark:hover:text-white" href="#">New Arrivals</a>
+<a class="text-sm font-medium leading-normal text-text-dark hover:text-primary dark:text-gray-300 dark:hover:text-white" href="#">Clothing</a>
+<a class="text-sm font-medium leading-normal text-text-dark hover:text-primary dark:text-gray-300 dark:hover:text-white" href="#">Accessories</a>
+<a class="text-sm font-medium leading-normal text-text-dark hover:text-primary dark:text-gray-300 dark:hover:text-white" href="#">Sale</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-border-light text-text-dark transition-colors hover:bg-primary/20 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
+<span class="material-symbols-outlined" style="font-size: 20px;">search</span>
+</button>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-border-light text-text-dark transition-colors hover:bg-primary/20 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
+<span class="material-symbols-outlined" style="font-size: 20px;">person</span>
+</button>
+<button class="relative flex size-10 cursor-pointer items-center justify-center rounded-full bg-border-light text-text-dark transition-colors hover:bg-primary/20 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
+<span class="material-symbols-outlined" style="font-size: 20px;">shopping_bag</span>
+<span class="absolute right-0 top-0 flex size-3 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">3</span>
+</button>
+</div>
+</div>
+</header>
+<main class="layout-container flex h-full grow flex-col px-4 py-6 md:px-10 lg:px-40">
+<div class="mx-auto flex w-full max-w-[1200px] flex-col gap-8 lg:flex-row">
+<!-- Left Column: Payment Process -->
+<div class="flex flex-1 flex-col gap-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap items-center gap-2 text-sm md:text-base">
+<a class="font-medium text-text-purple hover:text-primary dark:text-purple-400" href="#">Cart</a>
+<span class="text-text-purple dark:text-purple-400">/</span>
+<a class="font-medium text-text-purple hover:text-primary dark:text-purple-400" href="#">Information</a>
+<span class="text-text-purple dark:text-purple-400">/</span>
+<a class="font-medium text-text-purple hover:text-primary dark:text-purple-400" href="#">Shipping</a>
+<span class="text-text-purple dark:text-purple-400">/</span>
+<span class="font-bold text-text-dark dark:text-white">Payment</span>
+</div>
+<!-- Heading -->
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl font-black leading-tight tracking-tight text-text-dark dark:text-white md:text-4xl">Payment Details</h1>
+<p class="text-text-purple dark:text-gray-400">Complete your purchase securely.</p>
+</div>
+<!-- Payment Method Selection -->
+<section class="flex flex-col gap-4">
+<h3 class="text-lg font-bold text-text-dark dark:text-white">Choose payment method</h3>
+<div class="flex flex-col gap-3" style="--radio-dot-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(180,17,212)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');">
+<!-- Credit Card Option -->
+<label class="group relative flex cursor-pointer items-center gap-4 rounded-xl border border-solid border-border-light bg-white p-4 shadow-sm transition-all hover:border-primary dark:border-gray-700 dark:bg-gray-900 dark:hover:border-primary">
+<input checked="" class="h-5 w-5 border-2 border-border-light bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-gray-600 dark:checked:border-primary" name="payment_method" type="radio"/>
+<div class="flex grow items-center justify-between">
+<div class="flex flex-col">
+<p class="font-bold text-text-dark dark:text-white">Credit Card</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Safe money transfer using your bank account.</p>
+</div>
+<div class="flex gap-2 text-gray-400 dark:text-gray-500">
+<img alt="Mastercard logo" class="h-6" data-alt="Mastercard logo showing overlapping red and orange circles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJVNAF642ECt3e2RzTyRCf7O9KBVNz6lOAy5Gv-niAnl57dmAGOqqQfCnP9JhTwTOQP6rYkL9K6QteY6fubCyqrthp7c6PM7hYr-R5ArsBU7AXNpnV6FeJlcs-fG7LWPNlC42mzKJ1OyB5j8G3lbGz8RU_nhwyqi2AoTu3lVDOeg__2AC25r-wAj3wkc39Sv4vuuL9AHQMze__IDw1Bju4ySIITuTHFIN3Y3g4txo9uXgozWBbfZMJMP1mwk6t_5gc5LNl3spkZX8"/>
+<img alt="Visa logo" class="h-6" data-alt="Visa logo in blue text with yellow detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU3WrzlFv8RHDg0vXMYsJ5F0hgtfs-cWca8Wl56VU7zC8423N4eV3zQn1SFNxEpg0mk6G-KSPNgtvlsOHypAz7ErmMB8JTMOY8A9D1zvY518VwwGArnr_1cLC8VkJO6b9NdCtHi02taJ1EVQOGuWQcMxbv7F6srWnLbMOAv87w9H1uW1VtiF81BAmBPpsE7Rv6RYic8ehFwWnQWQWX4kiEVoCja_O5YwZlG7m4paQMHQT8jdLKQPKmEn6CfvW9NF8GQWRX-C70jpc"/>
+</div>
+</div>
+</label>
+<!-- PayPal Option -->
+<label class="group relative flex cursor-pointer items-center gap-4 rounded-xl border border-solid border-border-light bg-white p-4 shadow-sm transition-all hover:border-primary dark:border-gray-700 dark:bg-gray-900 dark:hover:border-primary">
+<input class="h-5 w-5 border-2 border-border-light bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-gray-600 dark:checked:border-primary" name="payment_method" type="radio"/>
+<div class="flex grow items-center justify-between">
+<div class="flex flex-col">
+<p class="font-bold text-text-dark dark:text-white">PayPal</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">You will be redirected to PayPal website.</p>
+</div>
+<div class="text-[#003087]">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+</div>
+</label>
+<!-- Google Pay Option -->
+<label class="group relative flex cursor-pointer items-center gap-4 rounded-xl border border-solid border-border-light bg-white p-4 shadow-sm transition-all hover:border-primary dark:border-gray-700 dark:bg-gray-900 dark:hover:border-primary">
+<input class="h-5 w-5 border-2 border-border-light bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-gray-600 dark:checked:border-primary" name="payment_method" type="radio"/>
+<div class="flex grow items-center justify-between">
+<div class="flex flex-col">
+<p class="font-bold text-text-dark dark:text-white">Google Pay</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Pay easily with your saved Google Pay account.</p>
+</div>
+<div class="text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined">android</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+<!-- Card Details Form -->
+<section class="mt-2 flex flex-col gap-6 rounded-xl border border-border-light bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+<!-- Card Number -->
+<div class="col-span-1 md:col-span-2">
+<label class="mb-2 block text-sm font-semibold text-text-dark dark:text-white">Card Number</label>
+<div class="relative flex items-center rounded-lg border border-border-light bg-background-light focus-within:border-primary focus-within:ring-1 focus-within:ring-primary dark:border-gray-600 dark:bg-gray-800">
+<input class="w-full border-none bg-transparent px-4 py-3 text-text-dark placeholder-gray-400 focus:ring-0 dark:text-white dark:placeholder-gray-500" placeholder="0000 0000 0000 0000" type="text"/>
+<div class="mr-4 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+</div>
+</div>
+<!-- Expiry Date -->
+<div>
+<label class="mb-2 block text-sm font-semibold text-text-dark dark:text-white">Expiry Date</label>
+<div class="relative flex items-center rounded-lg border border-border-light bg-background-light focus-within:border-primary focus-within:ring-1 focus-within:ring-primary dark:border-gray-600 dark:bg-gray-800">
+<input class="w-full border-none bg-transparent px-4 py-3 text-text-dark placeholder-gray-400 focus:ring-0 dark:text-white dark:placeholder-gray-500" placeholder="MM / YY" type="text"/>
+<div class="mr-4 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+</div>
+</div>
+<!-- CVC -->
+<div>
+<label class="mb-2 block text-sm font-semibold text-text-dark dark:text-white">CVC / CVV</label>
+<div class="relative flex items-center rounded-lg border border-border-light bg-background-light focus-within:border-primary focus-within:ring-1 focus-within:ring-primary dark:border-gray-600 dark:bg-gray-800">
+<input class="w-full border-none bg-transparent px-4 py-3 text-text-dark placeholder-gray-400 focus:ring-0 dark:text-white dark:placeholder-gray-500" placeholder="123" type="text"/>
+<div class="mr-4 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined">lock</span>
+</div>
+</div>
+</div>
+<!-- Cardholder Name -->
+<div class="col-span-1 md:col-span-2">
+<label class="mb-2 block text-sm font-semibold text-text-dark dark:text-white">Cardholder Name</label>
+<div class="relative flex items-center rounded-lg border border-border-light bg-background-light focus-within:border-primary focus-within:ring-1 focus-within:ring-primary dark:border-gray-600 dark:bg-gray-800">
+<input class="w-full border-none bg-transparent px-4 py-3 text-text-dark placeholder-gray-400 focus:ring-0 dark:text-white dark:placeholder-gray-500" placeholder="Full Name on Card" type="text"/>
+<div class="mr-4 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined">person</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Checkboxes -->
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3">
+<input class="h-5 w-5 rounded border-border-light text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-800" type="checkbox"/>
+<span class="text-sm font-medium text-text-dark dark:text-gray-300">Save this card for future purchases</span>
+</label>
+<label class="flex items-center gap-3">
+<input checked="" class="h-5 w-5 rounded border-border-light text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-800" type="checkbox"/>
+<span class="text-sm font-medium text-text-dark dark:text-gray-300">Billing address same as shipping</span>
+</label>
+</div>
+</section>
+<!-- Pay Button -->
+<div class="mt-4">
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 text-lg font-bold text-white transition-all hover:bg-primary/90 focus:ring-4 focus:ring-primary/30 active:scale-[0.99]">
+<span class="material-symbols-outlined">lock</span>
+                            Pay $245.00
+                        </button>
+<div class="mt-4 flex justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined" style="font-size: 16px;">lock</span>
+<p>All transactions are secure and encrypted.</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary -->
+<aside class="flex w-full flex-col gap-6 lg:w-[420px]">
+<div class="sticky top-24 rounded-xl border border-border-light bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+<h2 class="mb-6 text-xl font-bold text-text-dark dark:text-white">Order Summary</h2>
+<!-- Cart Items -->
+<div class="mb-6 flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="flex gap-4">
+<div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-gray-100">
+<img alt="Floral Summer Dress" class="h-full w-full object-cover" data-alt="Woman wearing floral summer dress standing in sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxQGJh7RFQvJ03dCXlpCR5_X34On_EdULTmHwM7u1KmMHZY6Xb1uqFEWcCZdduKPGq7JOI85R60Ffbur4Cf_jdUQEryBMwngb043Z3EQ6qKiUKFbGlwAL0WNr7CTUpps7Bl_IscoCFKnJhU3SIbBLfgSy2DBZF3zTrxdDW8CVL63gtkxjzuyME949qE10KI9mjUXgBx8I-a0DqVXtgJWwYCxUM76bzz4h5adyFi1r55nELrG8LyuUxBsIstZKmE2scEM3Vb-7-y40"/>
+<span class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-gray-500 text-xs font-bold text-white shadow-sm">1</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<h4 class="font-bold text-text-dark dark:text-white">Floral Summer Dress</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">Size: M</p>
+</div>
+<div class="flex items-center justify-end">
+<p class="font-bold text-text-dark dark:text-white">$120.00</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4">
+<div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-gray-100">
+<img alt="Leather Ankle Boots" class="h-full w-full object-cover" data-alt="Close up of blue high heel shoes on pavement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtIFd0N3JB0nJGxJDZljQkY2gd_hgN6QfXWpP8MZaNIYhsNsPrIa241Txd8ybKqIJcpyiAaR8q4lRxCSaL8v-d_aKJRyCGq1_RtcCl6j2fbmXV5v3rPZ_uAvvAdcsChvUF4vcjdL3jvvxibdqi3c2sW-ZgRIM9dELpULy4wZ5v_AZnb04D-SIV28iC9uyj8GbXnr7fDRbbUAZRZNsZZ7JqH3hSdFsAkQqxgqfOLeJGDx_FtiOg2R2_YRjZZKsETOtUm-_jGvNm1AE"/>
+<span class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-gray-500 text-xs font-bold text-white shadow-sm">1</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<h4 class="font-bold text-text-dark dark:text-white">Classic Heels</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">Size: 38</p>
+</div>
+<div class="flex items-center justify-end">
+<p class="font-bold text-text-dark dark:text-white">$85.00</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex gap-4">
+<div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-gray-100">
+<img alt="Designer Tote Bag" class="h-full w-full object-cover" data-alt="Brown leather designer tote bag on white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4ISbv-4K-G3b7w9CHcXot2ZhWTARp9-PASzICdX9daogdb0-wieQOxCnN3gm14TvcG9UQolBViRS0BnXDJlJv2MlLGhuXJW3vtmFywJeAwymfLV3OnArJqZKZEy-ChKh4JQ1qrcZ5ORh8qXEGzI76aCiCL3PxZK6DpVt41CThoDG5Joau_47C_yKQHPpy3Sgwx6Grz_IhRN-zM1Sh5N9lz5TFoueIbDtJxYsDuNEndimVMFXMVNEfaZoPTOnl6tsrxT_RiN0PB-Y"/>
+<span class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-gray-500 text-xs font-bold text-white shadow-sm">1</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<h4 class="font-bold text-text-dark dark:text-white">Leather Tote</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">Color: Brown</p>
+</div>
+<div class="flex items-center justify-end">
+<p class="font-bold text-text-dark dark:text-white">$40.00</p>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="my-6 border-t border-dashed border-border-light dark:border-gray-700"></div>
+<!-- Cost Breakdown -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+<span>Subtotal</span>
+<span class="font-medium text-text-dark dark:text-white">$245.00</span>
+</div>
+<div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+<span>Shipping</span>
+<span class="font-medium text-green-600 dark:text-green-400">Free</span>
+</div>
+<div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+<span>Taxes</span>
+<span class="font-medium text-text-dark dark:text-white">$0.00</span>
+</div>
+</div>
+<!-- Divider -->
+<div class="my-6 border-t border-solid border-border-light dark:border-gray-700"></div>
+<!-- Total -->
+<div class="flex items-center justify-between">
+<span class="text-lg font-bold text-text-dark dark:text-white">Total</span>
+<div class="flex items-end gap-1">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">USD</span>
+<span class="text-2xl font-black text-primary">$245.00</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

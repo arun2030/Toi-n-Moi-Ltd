@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clothing Category - TOI &amp; MOI</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#b017cf",
+                "background-light": "#f8f6f8",
+                "background-dark": "#1e1121",
+              },
+              fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for sidebar */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#190e1b] antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1e7f3] bg-[#fbf8fc]/95 backdrop-blur-sm px-6 py-4 md:px-10">
+<div class="flex items-center gap-4 text-[#190e1b]">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#190e1b] text-xl font-extrabold leading-tight tracking-[-0.015em]">TOI &amp; MOI</h2>
+</div>
+<!-- Desktop Nav Links -->
+<div class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-[#190e1b] hover:text-primary transition-colors text-sm font-bold leading-normal" href="#">New In</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Clothing</a>
+<a class="text-[#190e1b] hover:text-primary transition-colors text-sm font-bold leading-normal" href="#">Accessories</a>
+<a class="text-[#190e1b] hover:text-primary transition-colors text-sm font-bold leading-normal" href="#">Editorial</a>
+</div>
+<!-- Action Icons -->
+<div class="flex items-center justify-end gap-2 md:gap-4">
+<button class="group flex h-10 w-10 cursor-pointer items-center justify-center rounded-full hover:bg-[#f1e7f3] text-[#190e1b] transition-colors">
+<span class="material-symbols-outlined group-hover:text-primary">search</span>
+</button>
+<button class="group flex h-10 w-10 cursor-pointer items-center justify-center rounded-full hover:bg-[#f1e7f3] text-[#190e1b] transition-colors relative">
+<span class="material-symbols-outlined group-hover:text-primary">shopping_bag</span>
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-primary ring-2 ring-white"></span>
+</button>
+<button class="group flex h-10 w-10 cursor-pointer items-center justify-center rounded-full hover:bg-[#f1e7f3] text-[#190e1b] transition-colors">
+<span class="material-symbols-outlined group-hover:text-primary">person</span>
+</button>
+</div>
+</header>
+<!-- Main Content Layout -->
+<div class="layout-container flex grow flex-col">
+<div class="flex flex-1 justify-center py-5 px-4 md:px-8 lg:px-12 xl:px-20">
+<div class="layout-content-container flex w-full max-w-[1440px] flex-col">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 px-4 py-2">
+<a class="text-[#8b4e97] hover:underline text-sm font-medium leading-normal" href="#">Home</a>
+<span class="text-[#e3d0e7] text-sm font-medium leading-normal">/</span>
+<span class="text-[#190e1b] text-sm font-medium leading-normal">Clothing</span>
+</div>
+<!-- Page Header & Sort -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 px-4 py-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#190e1b] text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Women's Clothing</h1>
+<p class="text-[#8b4e97] text-lg font-normal leading-normal">Discover our latest collection of essentials.</p>
+</div>
+<!-- Sort Dropdown (Adapted TextField) -->
+<div class="flex items-center gap-3">
+<span class="text-[#190e1b] text-sm font-bold whitespace-nowrap">Sort by:</span>
+<div class="relative w-48" style="--select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(139,78,151)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e');">
+<select class="appearance-none w-full cursor-pointer rounded border border-[#e3d0e7] bg-[#fbf8fc] bg-[image:--select-button-svg] bg-no-repeat bg-[right_12px_center] py-3 pl-4 pr-10 text-sm font-medium text-[#190e1b] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+<option value="newest">Newest</option>
+<option value="price-low">Price: Low to High</option>
+<option value="price-high">Price: High to Low</option>
+<option value="bestsellers">Bestsellers</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Content Grid: Sidebar + Products -->
+<div class="flex flex-col lg:flex-row gap-8 px-4 mt-6">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="lg:sticky lg:top-24 space-y-8" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(251,248,252)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');">
+<!-- Categories Filter -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#190e1b] text-base font-bold uppercase tracking-wider">Category</h3>
+<div class="flex flex-col gap-2">
+<label class="group flex cursor-pointer items-center gap-3">
+<input checked="" class="h-5 w-5 rounded border-[#e3d0e7] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+<span class="text-[#190e1b] text-sm group-hover:text-primary transition-colors">Dresses (42)</span>
+</label>
+<label class="group flex cursor-pointer items-center gap-3">
+<input class="h-5 w-5 rounded border-[#e3d0e7] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+<span class="text-[#190e1b] text-sm group-hover:text-primary transition-colors">Tops (28)</span>
+</label>
+<label class="group flex cursor-pointer items-center gap-3">
+<input class="h-5 w-5 rounded border-[#e3d0e7] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+<span class="text-[#190e1b] text-sm group-hover:text-primary transition-colors">Pants &amp; Skirts (15)</span>
+</label>
+<label class="group flex cursor-pointer items-center gap-3">
+<input class="h-5 w-5 rounded border-[#e3d0e7] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+<span class="text-[#190e1b] text-sm group-hover:text-primary transition-colors">Outerwear (10)</span>
+</label>
+</div>
+</div>
+<hr class="border-[#f1e7f3]"/>
+<!-- Size Filter -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#190e1b] text-base font-bold uppercase tracking-wider">Size</h3>
+<div class="flex flex-wrap gap-2">
+<button class="h-10 w-10 rounded border border-[#e3d0e7] bg-white text-sm font-medium text-[#190e1b] hover:border-primary hover:text-primary focus:bg-primary focus:text-white focus:border-primary transition-colors">XS</button>
+<button class="h-10 w-10 rounded border border-primary bg-primary text-sm font-medium text-white transition-colors">S</button>
+<button class="h-10 w-10 rounded border border-[#e3d0e7] bg-white text-sm font-medium text-[#190e1b] hover:border-primary hover:text-primary focus:bg-primary focus:text-white focus:border-primary transition-colors">M</button>
+<button class="h-10 w-10 rounded border border-[#e3d0e7] bg-white text-sm font-medium text-[#190e1b] hover:border-primary hover:text-primary focus:bg-primary focus:text-white focus:border-primary transition-colors">L</button>
+<button class="h-10 w-10 rounded border border-[#e3d0e7] bg-white text-sm font-medium text-[#190e1b] hover:border-primary hover:text-primary focus:bg-primary focus:text-white focus:border-primary transition-colors">XL</button>
+</div>
+</div>
+<hr class="border-[#f1e7f3]"/>
+<!-- Color Filter -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#190e1b] text-base font-bold uppercase tracking-wider">Color</h3>
+<div class="flex flex-wrap gap-3">
+<button class="h-8 w-8 rounded-full bg-black ring-2 ring-offset-2 ring-transparent focus:ring-primary"></button>
+<button class="h-8 w-8 rounded-full bg-white border border-gray-200 ring-2 ring-offset-2 ring-transparent focus:ring-primary"></button>
+<button class="h-8 w-8 rounded-full bg-[#d4a5a5] ring-2 ring-offset-2 ring-transparent focus:ring-primary"></button>
+<button class="h-8 w-8 rounded-full bg-[#8b4e97] ring-2 ring-offset-2 ring-primary"></button>
+<button class="h-8 w-8 rounded-full bg-[#5a7d5a] ring-2 ring-offset-2 ring-transparent focus:ring-primary"></button>
+<button class="h-8 w-8 rounded-full bg-[#2a4d69] ring-2 ring-offset-2 ring-transparent focus:ring-primary"></button>
+</div>
+</div>
+<hr class="border-[#f1e7f3]"/>
+<!-- Price Filter -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#190e1b] text-base font-bold uppercase tracking-wider">Price</h3>
+<div class="flex flex-col gap-2">
+<label class="group flex cursor-pointer items-center gap-3">
+<input class="h-5 w-5 rounded border-[#e3d0e7] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+<span class="text-[#190e1b] text-sm group-hover:text-primary transition-colors">Under $50</span>
+</label>
+<label class="group flex cursor-pointer items-center gap-3">
+<input checked="" class="h-5 w-5 rounded border-[#e3d0e7] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+<span class="text-[#190e1b] text-sm group-hover:text-primary transition-colors">$50 - $100</span>
+</label>
+<label class="group flex cursor-pointer items-center gap-3">
+<input class="h-5 w-5 rounded border-[#e3d0e7] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+<span class="text-[#190e1b] text-sm group-hover:text-primary transition-colors">$100 - $200</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<main class="flex-1">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-6 gap-y-10">
+<!-- Product Card 1 -->
+<div class="group flex flex-col gap-4 cursor-pointer">
+<div class="relative overflow-hidden rounded bg-gray-100 aspect-[3/4]">
+<img alt="Woman wearing a long silk dress" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Elegant silk evening dress in beige" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPAmfpVCdGFwYCejiICv-J_Vg9DMeZZmwDxN8mQQLbcAgu0IGNImEZVX-qMf3ML8KsU7JuMz8wwYtjI6wN425ENuv_kYXSDp7ClS1q31aADzroLhS_5ab_QHKPWqWKGLg9WVVbGlituTmQMdeBjt8Gcq6qbyHBj6jr9EKFQprp7pdeU0lk0cFa6hkJrfA5n4yDn_Xm1pZjMeMZ-PkQGRDcDSRXb7xQeDZcDy8KXexypnlNTXzfilIL8l4qA-CQDmhyObyd0DFBUIw"/>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 text-xs font-bold text-[#190e1b] uppercase tracking-wider rounded-sm">New</div>
+<button class="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#190e1b] group-hover:text-primary transition-colors">Silk Evening Gown</h3>
+<p class="text-sm font-medium text-[#8b4e97]">$245.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col gap-4 cursor-pointer">
+<div class="relative overflow-hidden rounded bg-gray-100 aspect-[3/4]">
+<img alt="Woman in floral summer dress" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Bright yellow floral summer dress" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-8hVT7yI2rfdTGxWvBkija6ECijBIgUX4ad-4SpSKUfnyV96Xc7S4BfMik5qS8XBR3RBB7lKETeGvg-MRSuGiThNFv3_1x_BKR4Sb_3d3jSh1vdGIRWwpLWJOu5TL-FvNCS93PSBQcvBue_xV1kWTuwOwBBcOFLyU1CGWfw_-TDeCJdJCky5jX0FnYZu8ZrjQdvQn-XUOcXsKw6EJoGgO9EZdUMLgO5lXEuioq5ZIZtLBScxYpMY5QgyPQXnlWOteQDj-DHJS4Vo"/>
+<div class="absolute top-3 left-3 bg-primary/90 backdrop-blur px-2.5 py-1 text-xs font-bold text-white uppercase tracking-wider rounded-sm">Sale</div>
+<button class="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#190e1b] group-hover:text-primary transition-colors">Floral Summer Dress</h3>
+<div class="flex items-center gap-2">
+<p class="text-sm font-bold text-[#b017cf]">$89.00</p>
+<p class="text-xs font-medium text-gray-400 line-through">$120.00</p>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col gap-4 cursor-pointer">
+<div class="relative overflow-hidden rounded bg-gray-100 aspect-[3/4]">
+<img alt="Woman in dark velvet dress" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Mysterious black velvet midi dress" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-1IubL1jHBmAXGDv9jFY419ignckDbipjqV3AdV8ur4ccj04U6IkG2rtF8C1FBA1c2yHw5ECuDZ1StFLve6ELPee8S3DCK6EyMR_XSygPiMjKul1MMmyGn8f3_fgl_H1Z4aVOG6NYLDVNffVM2CUuN_gDixkmclJozRFk7KfJS7VzEf0EASskBfwGcajzQFDyyxTvPhV4HvmqiPbR_DkJxJ5IEym9v_orekWoA4Zs-xED_ZJ8CAiJK1CDjJ_R1W5zhbYwm_Nkvuk"/>
+<button class="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#190e1b] group-hover:text-primary transition-colors">Velvet Midi Dress</h3>
+<p class="text-sm font-medium text-[#8b4e97]">$180.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col gap-4 cursor-pointer">
+<div class="relative overflow-hidden rounded bg-gray-100 aspect-[3/4]">
+<img alt="White linen clothes on a rack" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Classic white linen button-up shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Eok_4F3j0B80R8ldvNXIELfJkkQ_EuxlToLKxwCIFnRtOSGBetw2CSEwmmOgcluGlvlhpCRde8uwaaYc9H89CgRqYKAHsR41dYEmkV1ggrBoYvTyI51vC1Al9MSci5jHZ_7ZkbM8rq6-VDb32W1ZVqhRirFAPFnN6HotDA78wN2QZDNg9Qf58nBgZJNz73SmfI9XxIR3BcRS1ZY0uh7HZAmT-GbKuj3kUUkojgxo_Y6tFnwX_jwqTWvuAOLzOdHfBUTh9OsL4N0"/>
+<button class="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#190e1b] group-hover:text-primary transition-colors">Classic Linen Shirt</h3>
+<p class="text-sm font-medium text-[#8b4e97]">$95.00</p>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group flex flex-col gap-4 cursor-pointer">
+<div class="relative overflow-hidden rounded bg-gray-100 aspect-[3/4]">
+<img alt="Woman in pink coat" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Soft pink wool oversized coat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEWEBXB5MGuT3vl3fV-ZrvtwAgzAU5mi3o2RDo0Oqxn4CtWAGrflE3gESvaCTrebNUznsh3Oz_pXnNpWhyrLEEZ-EEEuPPDID1ETY4vA4Ll2gyaZ48-bDk6nCH9ZUZaFaHGJ06zVzLM_SHfeV4mH2FxZtD2dKLwb3Z5OCBWFEjLGWIQE2xVxU2BU38ScG3YFhH2bSoOVPzAZE0VHkvHlbINiMl2tcXBLunP7hpjnhhoU5ZIwRHQqqkxrjAwfhODQnuLgDVJuh6zfM"/>
+<button class="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#190e1b] group-hover:text-primary transition-colors">Wool Oversized Coat</h3>
+<p class="text-sm font-medium text-[#8b4e97]">$320.00</p>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group flex flex-col gap-4 cursor-pointer">
+<div class="relative overflow-hidden rounded bg-gray-100 aspect-[3/4]">
+<img alt="Woman in patterned skirt" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Geometric pattern pleated midi skirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXutrmvKpavBQahZOkKLhLHLaKStZ5M7Y-Zdc1aOx64ZGPkd6PPXQco_qLLLk8ab11nnDXKhMj5-RRAwookorDLTScV4pTfyrQtek97yxKaVoH0WI_qbQn32ZOhhOS9eUlLlDixgLaIbpFNRxSGZDKQfuJa7rEZxs_f_oiy9k28Fhbx5lYzqKzw3GSq6b5bRF-OcUXb8U6dSknEoz1CQA36xczZm2kcxZVXtXr6TBOF4FursRLvTVOZf74NLOdsCAprRZPLPvL-s0"/>
+<button class="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#190e1b] group-hover:text-primary transition-colors">Pleated Midi Skirt</h3>
+<p class="text-sm font-medium text-[#8b4e97]">$110.00</p>
+</div>
+</div>
+<!-- Product Card 7 -->
+<div class="group flex flex-col gap-4 cursor-pointer">
+<div class="relative overflow-hidden rounded bg-gray-100 aspect-[3/4]">
+<img alt="Fashion model in beige sweater" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Cozy beige knit turtleneck sweater" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmMiSI1bscxoOwpu68VcD4YGdj-MptncealI_GlWbEbPhJ6qj2V1E23dcEKNS-yA14SvVsKXvUKKqA0wUVu910eN45thF71kS-7uNsewR5eztM88ns9hayRgsLZ9CqecrXCK-Eh23Q0mvnzvwaBJZTqzTkFJ3Ot2hR7Z4OhgQo-1rMqxxqhPGXIYZRm5xSWVe9reC5RmL4V0zNW3uChmAkG5p76xsAiTbsxgjRcYfiV-c85YOI_Mt95L0XOtPdsKoUXCCNoS7R2Ag"/>
+<button class="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#190e1b] group-hover:text-primary transition-colors">Knit Turtleneck</h3>
+<p class="text-sm font-medium text-[#8b4e97]">$140.00</p>
+</div>
+</div>
+<!-- Product Card 8 -->
+<div class="group flex flex-col gap-4 cursor-pointer">
+<div class="relative overflow-hidden rounded bg-gray-100 aspect-[3/4]">
+<img alt="Woman in white bridal dress" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Simple modern white wedding dress" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyAxJZWIO8ANOsohinQtq_fQS8swttMyQpcnIw0JWm7WRtHUa0lzHWo6owMVNbV17-i3-HdwAW49rjTD6TfcBhmrWY5S3Bpm3f0iwbihG5bWUxIgmUT9UYeot_Sg-R3pH08mvPhy_yfmgbk5C8WgL5PzCV1dFoEsFK0DqYULAMDSImB0aVbcLeVJkB73hKgjv96j9Zpd8DQVFD20BaN_aaj06Qq3SqTeGq4ZFf7mv9Y3Vw4wAzusCvhhthMk3RyfSNy7nPvhEj3FU"/>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 text-xs font-bold text-[#190e1b] uppercase tracking-wider rounded-sm">Limited</div>
+<button class="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#190e1b] group-hover:text-primary transition-colors">Modern Bridal Dress</h3>
+<p class="text-sm font-medium text-[#8b4e97]">$550.00</p>
+</div>
+</div>
+<!-- Product Card 9 -->
+<div class="group flex flex-col gap-4 cursor-pointer">
+<div class="relative overflow-hidden rounded bg-gray-100 aspect-[3/4]">
+<img alt="Woman in denim jacket" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Classic blue denim oversized jacket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpXQ4YoFxag5cSJZ0fCUiVOdYR-yIcfABILPeLSqdmxHXK_ZooWgJ-IXBqtqGka1GSM3wBsFfWMB7DuVsSVsvbf168i9K2h5VlKO10SLkC9VHaG9dolPCYHA7mIOBuE2fiH4fe433OpxhTtbhI_6SpwTSre1M3H1FUHp7mnUw_QX90r1ffgoye2iIQUqYhFaL8J6w_OVsQ0LnKkKE0uYgmv6zZLS5EaPW7h4UxlgVKz2vmadqikkLnGXM0QHeIMWHbz-YDTeMxes0"/>
+<button class="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#190e1b] group-hover:text-primary transition-colors">Oversized Denim Jacket</h3>
+<p class="text-sm font-medium text-[#8b4e97]">$130.00</p>
+</div>
+</div>
+</div>
+<!-- Load More Button -->
+<div class="mt-16 flex justify-center pb-20">
+<button class="flex items-center gap-2 rounded bg-[#f1e7f3] px-8 py-3 text-sm font-bold uppercase tracking-widest text-[#190e1b] transition-all hover:bg-primary hover:text-white">
+                                Load More
+                                <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-[#fbf8fc] border-t border-[#f1e7f3] pt-16 pb-8">
+<div class="layout-container flex flex-col items-center px-6 md:px-10">
+<div class="flex w-full max-w-[1440px] flex-col md:flex-row justify-between gap-12">
+<!-- Newsletter -->
+<div class="flex flex-col gap-4 max-w-md">
+<h4 class="text-xl font-bold text-[#190e1b]">Join the Club</h4>
+<p class="text-sm text-[#8b4e97]">Subscribe to receive updates, access to exclusive deals, and more.</p>
+<div class="flex gap-2">
+<input class="w-full rounded border border-[#e3d0e7] bg-white px-4 py-2.5 text-sm text-[#190e1b] placeholder:text-[#e3d0e7] focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Enter your email address" type="email"/>
+<button class="whitespace-nowrap rounded bg-[#190e1b] px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-primary">
+                            Subscribe
+                        </button>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="flex flex-wrap gap-12 md:gap-24">
+<div class="flex flex-col gap-3">
+<h5 class="text-sm font-bold uppercase tracking-widest text-[#190e1b]">Shop</h5>
+<a class="text-sm text-[#8b4e97] hover:text-primary" href="#">New Arrivals</a>
+<a class="text-sm text-[#8b4e97] hover:text-primary" href="#">Clothing</a>
+<a class="text-sm text-[#8b4e97] hover:text-primary" href="#">Accessories</a>
+<a class="text-sm text-[#8b4e97] hover:text-primary" href="#">Sale</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-sm font-bold uppercase tracking-widest text-[#190e1b]">Support</h5>
+<a class="text-sm text-[#8b4e97] hover:text-primary" href="#">Contact Us</a>
+<a class="text-sm text-[#8b4e97] hover:text-primary" href="#">Shipping &amp; Returns</a>
+<a class="text-sm text-[#8b4e97] hover:text-primary" href="#">Size Guide</a>
+<a class="text-sm text-[#8b4e97] hover:text-primary" href="#">FAQ</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-sm font-bold uppercase tracking-widest text-[#190e1b]">Social</h5>
+<div class="flex gap-4">
+<a class="text-[#8b4e97] hover:text-primary transition-colors" href="#">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="text-[#8b4e97] hover:text-primary transition-colors" href="#">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 border-t border-[#e3d0e7] w-full pt-8 text-center md:text-left">
+<p class="text-xs text-[#8b4e97]">© 2024 TOI &amp; MOI. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

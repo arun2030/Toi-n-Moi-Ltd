@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Homepage - TOI-N-MOI</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scroll sections */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="flex min-h-screen w-full flex-col">
+<!-- Top Notification Bar -->
+<div class="bg-primary text-white text-xs font-bold py-2 text-center tracking-wide uppercase px-4">
+            Free Shipping on orders over $100
+        </div>
+<!-- Header / Navigation -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20 gap-4">
+<!-- Logo Section -->
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">TOI-N-MOI</h1>
+</div>
+<!-- Navigation Links (Hidden on mobile) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">New In</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Clothing</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Shoes</a>
+<a class="text-sm font-medium text-primary font-bold" href="#">Sale</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4 flex-1 justify-end max-w-md">
+<!-- Search Bar -->
+<div class="hidden sm:flex flex-1 max-w-[240px]">
+<div class="relative w-full group">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 focus:bg-white dark:focus:bg-slate-900 transition-all placeholder:text-slate-400" placeholder="Search" type="text"/>
+</div>
+</div>
+<!-- Icons -->
+<div class="flex items-center gap-1">
+<button class="p-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="p-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1.5 right-1.5 size-2 bg-primary rounded-full"></span>
+</button>
+<button class="md:hidden p-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full">
+<div class="relative h-[600px] w-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" data-alt="Woman in fashionable outfit walking in a sunny urban setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAtrwh76ss0C_Mqa-Yq0bekoJuc_hqsHf0p1hpvr1D-W4J_eXGEREcKRfDTLlA-CSq4ruEZFRL-sOMavGJ3uYGnAi_YtslLCIJYSHFFaaGoFGFcz-8A_REuMNhKT4_PPx-WNpxHJG9wOGQc1xG8vpb_kPfRyBXVQtoaLqDnvPe5r9dlaOS9v9zM6ueBwpyAQrc8KFA1f5auqAXb8NP4I5ByXPrGODrn5L8syfVRAvTi_21kWfvG3nmvCOU5yrZnAU6eBmp16rpsUPc');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+</div>
+<div class="relative h-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16 sm:pb-24">
+<div class="max-w-xl animate-fade-in-up">
+<h2 class="text-white text-lg font-medium mb-2 tracking-wide uppercase">Spring Collection 2024</h2>
+<h1 class="text-white text-5xl sm:text-6xl font-black tracking-tight leading-tight mb-4">
+                                The Spring Edit
+                            </h1>
+<p class="text-slate-200 text-lg sm:text-xl mb-8 font-light">
+                                Discover fresh looks, airy fabrics, and the vibrant colors of the new season.
+                            </p>
+<button class="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary text-white text-base font-bold hover:bg-sky-400 transition-all duration-200 shadow-lg shadow-primary/30">
+                                Shop Now
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- New Arrivals Section -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
+<div class="flex items-end justify-between mb-8">
+<div>
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">New Arrivals</h2>
+<p class="text-slate-500 dark:text-slate-400">Fresh styles just added to our collection</p>
+</div>
+<a class="hidden sm:flex items-center text-primary font-bold text-sm hover:underline gap-1" href="#">
+                        View All <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Woman wearing a floral maxi dress standing in a field" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZlJ7rRVqqF6bgf2cRJh1-HnXu8oUGYZ5ax1BnxJBoax6djf6t28yAdIyv10Kjr-aCDvh3zHQGKzqeXchmUhVGURzUPMdfGLwTqsRxDxKx2EkOTBotX-Pcusoas-NjLIxmwMMj-kMV1AQWIXHsPiNF85q61wx3RBfknU43I5_Hmx0FJxOsXry3WzV6l6DDi7P-60_sxANRRC-s8FzL0hJ_XBlwg7vkiCX9N0wdsn2yiKkkg7RIC4gZVZQfBZR0-COl2yDtj_YYsiM');"></div>
+<button class="absolute bottom-4 right-4 size-10 bg-white/90 dark:bg-slate-900/90 rounded-full flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-sm hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 text-xs font-bold rounded uppercase tracking-wider">New</div>
+</div>
+<div>
+<h3 class="font-medium text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Floral Maxi Dress</h3>
+<p class="text-slate-500 dark:text-slate-400 font-medium">$120.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Beige linen blazer jacket on a hanger" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDL89uL3frh-HlFVw5Z9iShqNf8yrWCWOrneC25_y9-E_m1BR_P3d6LJWaqjVclnPjCZ9riaONuvCfUyYORmMU_x8qMuO3tDSKnk_Nwvnsh0N65T1UOATezZNkZSwpqBM9lAXWYK4vG0_bK2gg6u5QLjE01xtvCO53s8CI7KqBvCPgCrDgTBwmUUXlMVeCas3VB1Goh1h5RfaIIxTcKQdaYAcUc5aUJoZq2JCernMQnTDGmRC-83LgzVEKei-sJBT44DaHc1nq4RN8');"></div>
+<button class="absolute bottom-4 right-4 size-10 bg-white/90 dark:bg-slate-900/90 rounded-full flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-sm hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<h3 class="font-medium text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Linen Blazer</h3>
+<p class="text-slate-500 dark:text-slate-400 font-medium">$180.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Woman wearing wide leg trousers walking down street" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNoy-irrXe8PwvxsNPsMcDWNwXzfnypwShgiow6weSwKSlBIFKaubEkJN6qLs4Qa0CbdUSlsS5TCLFWMOMN_mziZkUZEyBDeDGQYT6VEDAga7Ok8d7yTCQbqMq6NFYHvIEWLI3bZMh6QfLgdwhOp3XaDqv6hpvxtIMmUBNUH3VOStcVmf7UQZSelObVXaQjbiAZaVfnE8i4bY1EiU48cLMBVVradsF-AwdLj2_HZQJY1m5lxbRjTZ-RyNiKqMAZcgkJfg5-tqdRsQ');"></div>
+<button class="absolute bottom-4 right-4 size-10 bg-white/90 dark:bg-slate-900/90 rounded-full flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-sm hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<h3 class="font-medium text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Wide Leg Trousers</h3>
+<p class="text-slate-500 dark:text-slate-400 font-medium">$95.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="White silk camisole top on mannequin" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIfLigXCIkk3FTkHf7eVYDkNLUUBkJfJIU_2kVYOxiifASY0RVcRn3XsXSVaOiRc1B387uZHXeFt_iDbAlhf0fWjzO-bKxG-yqDMI8WgBLJnGOS1VxzoxI3Akr4B7m8A_S9scA45QKaXf4_6PABlnln2uMj9UazRRKM3lLUWzBqI2RIfJ299fB-j5Q0JHX9fR228dTr8j2rz0Ue5WXkCcz0amzOFPdygW7MQoStgXIET6rWqqC-yP5KM6J8Lnh338cbXc8xu7KR5c');"></div>
+<button class="absolute bottom-4 right-4 size-10 bg-white/90 dark:bg-slate-900/90 rounded-full flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-sm hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+<div class="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded uppercase tracking-wider">-20%</div>
+</div>
+<div>
+<h3 class="font-medium text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Silk Camisole</h3>
+<div class="flex gap-2 items-center">
+<p class="text-primary font-bold">$52.00</p>
+<p class="text-slate-400 text-sm line-through">$65.00</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center sm:hidden">
+<button class="w-full border border-slate-300 dark:border-slate-700 rounded-lg py-3 font-bold text-sm">View All New Arrivals</button>
+</div>
+</section>
+<!-- Promotional Banners / Categories -->
+<section class="py-4 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-auto md:h-[500px]">
+<!-- Category 1 -->
+<div class="relative group overflow-hidden rounded-lg h-[400px] md:h-full">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up of elegant evening dress fabric texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCwfSZL1WGIVVVqxkoTPEMY0IymqxIUNyQmZAD-zj7kdVT5e6x0O9UKT104wPQecY2GOcB7DdKahx_AXtjs3jPPaI789kSXeW4VIZW9lhNVbXn_zcAvancFnxVOysdxpf16r6ZOT6AQqesj5rg9TbKd8f4_ceRc7ha980G2hZxyiWW9R7hQI0FyaxVkk4nEJPxYjeAfzyHiDIE9Jt3HdfjFhE7dL7rHyujMHHX-opqucFiARLjWwLgKDZH85J3SWM6JIV8Z8riTmc');">
+</div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+<h3 class="text-white text-4xl font-black tracking-tight mb-2">Dresses</h3>
+<p class="text-white/90 mb-6 font-medium">Elegant styles for every occasion</p>
+<button class="bg-white text-slate-900 px-6 py-2.5 rounded font-bold text-sm hover:bg-slate-100 transition-colors">
+                                Shop Dresses
+                            </button>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="relative group overflow-hidden rounded-lg h-[400px] md:h-full">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Stack of folded blue denim jeans" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDn4-y6Mvq6czBvo_JYldg49qza4TFvei1R3hAoYof-_8k9Uf4fPUa8fe6k6uBybOOXoA8UTRjepB8Un9gwm2D7_ae2tozUFp6DsQkOtRGU30effiyFBQ1fi3eXE2eyiRFTPW_S64NkWW5ZLd1iNiaC48GC4iuAP92Pe4Urma5LiD5Hmta6XhxyjqO72sy4qXFd14N-J6f1FxJM7HJirV_hzXpM9PjvSFRDWPe8edPb3E7dkSbh1UIP1ahdgtOTsCtcvOudq-AIOWU');">
+</div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+<h3 class="text-white text-4xl font-black tracking-tight mb-2">Denim</h3>
+<p class="text-white/90 mb-6 font-medium">The perfect fit for your lifestyle</p>
+<button class="bg-white text-slate-900 px-6 py-2.5 rounded font-bold text-sm hover:bg-slate-100 transition-colors">
+                                Shop Denim
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Collections -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
+<div class="flex items-center justify-center mb-10 flex-col text-center">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-3">Trending Collections</h2>
+<p class="text-slate-500 dark:text-slate-400 max-w-2xl">
+                        Our best-sellers of the week. Designed for the modern muse.
+                    </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Trending 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Blue high heels shoes on concrete background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAndqvKq6rllo9IQoRmGVHqGfuCpo4FskEL6Jr5691r_W2ntdB0qetflp8566mHWOMe5lMZamN6RyGrWa8Ukz2labRHqJKMsoXov_0bgDydQLkd2Rdm1HmvQz-dVGRZPOScN0OLJPayezDdPmxgU-ulFu7es27tWy7W4WbGBLeaITFOPLIKt-xZWGlAUthG4DyMalsIAJUlab5tUD8FYQhMmGdX2OEpvj-c48riDBKPxvt8g3uxncykCf1IzevkRrOECq_DYEphnok');"></div>
+<button class="absolute bottom-4 right-4 size-10 bg-white/90 dark:bg-slate-900/90 rounded-full flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-sm hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<h3 class="font-medium text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Azure Heels</h3>
+<p class="text-slate-500 dark:text-slate-400 font-medium">$89.00</p>
+</div>
+</div>
+<!-- Trending 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist beige tote bag hanging on wall" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLx0HzV_drfa7gtiYRZA2xqPXo3MlFJHpdxjHRzDGx-tzjk8sfkQ9z_Kpz4mss3m4jQNEObeFd33QweDqz7FdNq_Jc_rhJ5Yzv-0WnLIwXmAUyno4MIWKP8n-IC6ucpxuIb_YlllHwJ2oGhgfPjSzCMqc_4hs6TLnLZS9wgJ8vRzxLpIyFPvWt_yMkClL6R2w4wcD1b-zUxwen3XDrOX6p4YNZDDUXydkhJVfmz48xx09Mf88vct_fSWB7VPjjIoUqm_AZUnn4Qvo');"></div>
+<button class="absolute bottom-4 right-4 size-10 bg-white/90 dark:bg-slate-900/90 rounded-full flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-sm hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<h3 class="font-medium text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Canvas Tote</h3>
+<p class="text-slate-500 dark:text-slate-400 font-medium">$45.00</p>
+</div>
+</div>
+<!-- Trending 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Wide brim straw summer hat on table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvns_wRqoQRoztm60xknT7O73d_t02P7gDCvGcKCIpNGXHxB4S9KGJuOPiTQso6r4AeFFFDxeahf5EWgoR-edu8fF7fT7QDfDPoCvSEQCIHxB8NPf3pOHXLRVEba6N3xMoatXwS_60_wwqTgyHgP6ptijdT0kBfdejJIRl7l0i-s6fsiNNDihyX14dH7EzCSn248xUseyJpU6u4aoEZfoMD9jxl6LSNOtp9hIrYuywxqlpUDYLvvIuXlc_x6NHqoOywnxj1g0OtpI');"></div>
+<button class="absolute bottom-4 right-4 size-10 bg-white/90 dark:bg-slate-900/90 rounded-full flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-sm hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<h3 class="font-medium text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Summer Hat</h3>
+<p class="text-slate-500 dark:text-slate-400 font-medium">$35.00</p>
+</div>
+</div>
+<!-- Trending 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Gold necklace chain on white surface" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6xFYeyGnltVSIu8GjRmoaCc3sfIZBrIJe5h4mrZehBIGXYCOKfgIqSD__BPZP5qXiiWytlGyWahi_I0az_OJrF69px4dCid3FV_c8bROkWgavuXnnNgkD4wOohColz4AkZW2zSaoqewP3GKM3kWIuyYafH_aZYReErM5dGzsfLP5IWr0n-HUKdYP2tMQyS5z_7UzGSZUTwjllmHeOR8o--iUHG6oPJkfEJoYyYJax0Yl5gTKpsDDLfAPneLXBTFQ522EdiiLIahI');"></div>
+<button class="absolute bottom-4 right-4 size-10 bg-white/90 dark:bg-slate-900/90 rounded-full flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-sm hover:bg-primary hover:text-white">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<h3 class="font-medium text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Gold Chain</h3>
+<p class="text-slate-500 dark:text-slate-400 font-medium">$150.00</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="bg-slate-100 dark:bg-slate-800/50 py-20 px-4">
+<div class="max-w-xl mx-auto text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">mail</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Unlock 15% Off Your First Order</h2>
+<p class="text-slate-500 dark:text-slate-400 mb-8">Sign up for our newsletter to receive exclusive offers, style tips, and new arrival updates.</p>
+<form class="flex flex-col sm:flex-row gap-3">
+<input class="flex-1 rounded-lg border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 py-3 px-4 focus:ring-2 focus:ring-primary focus:border-transparent text-slate-900 dark:text-white outline-none" placeholder="Enter your email address" type="email"/>
+<button class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-3 rounded-lg font-bold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors" type="button">
+                            Subscribe
+                        </button>
+</form>
+<p class="text-xs text-slate-400 mt-4">By signing up, you agree to our Privacy Policy and Terms of Service.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-slate-900 dark:text-white mb-2">
+<span class="material-symbols-outlined text-primary">diamond</span>
+<span class="font-bold text-lg">TOI-N-MOI</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                            Designed for the modern muse. We create timeless pieces that blend contemporary fashion with everyday comfort.
+                        </p>
+<div class="flex gap-4 mt-2">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a> <!-- placeholder for socials -->
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<!-- Links Column 1 -->
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Shop</h4>
+<ul class="flex flex-col gap-3 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">New Arrivals</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Clothing</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Accessories</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sale</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Gift Cards</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Help</h4>
+<ul class="flex flex-col gap-3 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Size Guide</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Track Order</a></li>
+</ul>
+</div>
+<!-- Links Column 3 -->
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">About</h4>
+<ul class="flex flex-col gap-3 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Our Story</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Press</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 text-xs">© 2024 TOI-N-MOI Inc. All rights reserved.</p>
+<div class="flex items-center gap-4 text-slate-400 text-xs">
+<a class="hover:text-slate-600 dark:hover:text-slate-200" href="#">Privacy Policy</a>
+<a class="hover:text-slate-600 dark:hover:text-slate-200" href="#">Terms of Use</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

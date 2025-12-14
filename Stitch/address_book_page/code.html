@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Address Book - Toi-n-Moi</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#da0b73",
+                        "background-light": "#f8f5f7",
+                        "background-dark": "#221019",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2f1b25",
+                        "border-light": "#f4e7ed",
+                        "border-dark": "#4a2e3a",
+                        "text-main": "#1c0d14",
+                        "text-muted": "#9c4973",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #e8cedb;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 font-display transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light dark:bg-background-dark border-b border-border-light dark:border-border-dark px-4 lg:px-10 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+<!-- Logo & Main Nav -->
+<div class="flex items-center gap-8 lg:gap-12">
+<a class="flex items-center gap-3 text-text-main dark:text-white group" href="#">
+<div class="size-8 bg-primary text-white rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">diamond</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">Toi-n-Moi</h2>
+</a>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-text-main dark:text-gray-200 text-sm font-semibold hover:text-primary transition-colors" href="#">New Arrivals</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Clothing</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Shoes</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-primary text-sm font-bold" href="#">Sale</a>
+</nav>
+</div>
+<!-- Search & Actions -->
+<div class="flex flex-1 justify-end items-center gap-4 lg:gap-6">
+<!-- Search Bar -->
+<div class="hidden md:flex flex-1 max-w-md relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-muted">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border-none rounded-lg leading-5 bg-white dark:bg-surface-dark text-text-main dark:text-white placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary/50 sm:text-sm shadow-sm transition-shadow" placeholder="Search for products..." type="text"/>
+</div>
+<!-- Icons -->
+<div class="flex items-center gap-2">
+<button class="md:hidden p-2 text-text-main dark:text-white hover:bg-border-light dark:hover:bg-border-dark rounded-lg transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-text-main dark:text-white hover:bg-border-light dark:hover:bg-border-dark rounded-lg transition-colors relative">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="p-2 text-text-main dark:text-white hover:bg-border-light dark:hover:bg-border-dark rounded-lg transition-colors relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1.5 right-1.5 size-2 bg-primary rounded-full"></span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Layout -->
+<div class="max-w-[1440px] mx-auto flex flex-col lg:flex-row min-h-[calc(100vh-73px)]">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden lg:flex w-64 flex-col gap-6 p-6 border-r border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark">
+<!-- User Profile Summary -->
+<div class="flex items-center gap-3 pb-6 border-b border-border-light dark:border-border-dark">
+<div class="relative size-12 rounded-full overflow-hidden ring-2 ring-primary/20">
+<img alt="Profile picture of Jane Doe smiling" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDnoYau0KtePNcPWXX-XRTSOZoQb3LmSEQrSOcn0gTGXzf56TM8pivYbwNJpcGVSRy2pPQb9dgR4llJTvWY0h-HWyIZIK0vVc2oxDODW8NvZjS1KLAfLtcAD_r1vhpRwFb40gnRw2GDrd60vuDzjNa5pFXpNUPhzhLCnm4KdBiAkipxFJGDZfngV_0NnZn8FWwKOOT1Agsm5r25JxoCxBkx_vM5gYptIqGhOUuXDrwKllybgPgMm_tU4jnd7PS3uhIFEebQMlOXk4"/>
+</div>
+<div class="flex flex-col">
+<h3 class="text-text-main dark:text-white font-bold">Hi, Jane</h3>
+<p class="text-text-muted text-xs">Member since 2023</p>
+</div>
+</div>
+<!-- Nav Links -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-main dark:text-gray-300 hover:bg-white dark:hover:bg-surface-dark hover:shadow-sm transition-all group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">package_2</span>
+<span class="font-medium text-sm">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-main dark:text-gray-300 hover:bg-white dark:hover:bg-surface-dark hover:shadow-sm transition-all group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">person</span>
+<span class="font-medium text-sm">Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary dark:text-primary shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-primary fill-current">location_on</span>
+<span class="font-bold text-sm">Address Book</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-main dark:text-gray-300 hover:bg-white dark:hover:bg-surface-dark hover:shadow-sm transition-all group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">credit_card</span>
+<span class="font-medium text-sm">Payment Methods</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-main dark:text-gray-300 hover:bg-white dark:hover:bg-surface-dark hover:shadow-sm transition-all group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">history</span>
+<span class="font-medium text-sm">Returns</span>
+</a>
+<div class="mt-auto pt-6">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:bg-red-50 dark:hover:bg-red-900/10 hover:text-red-600 transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium text-sm">Sign Out</span>
+</a>
+</div>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col">
+<!-- Breadcrumbs -->
+<div class="px-6 py-4 lg:px-10 lg:pt-8 flex flex-wrap gap-2 items-center text-sm">
+<a class="text-text-muted hover:text-primary transition-colors" href="#">Home</a>
+<span class="text-text-muted/50">/</span>
+<a class="text-text-muted hover:text-primary transition-colors" href="#">My Account</a>
+<span class="text-text-muted/50">/</span>
+<span class="text-text-main dark:text-white font-medium">Address Book</span>
+</div>
+<!-- Page Header -->
+<div class="px-6 lg:px-10 pb-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl lg:text-4xl font-bold text-text-main dark:text-white tracking-tight">Address Book</h1>
+<p class="text-text-muted dark:text-gray-400 max-w-2xl">Manage your saved addresses for a faster checkout experience. You can set default shipping and billing locations.</p>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="px-6 lg:px-10 pb-20 flex-1">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1: Add New Address (Dashed Action Card) -->
+<button class="group flex flex-col items-center justify-center min-h-[240px] rounded-xl border-2 border-dashed border-border-dark/20 dark:border-border-dark hover:border-primary dark:hover:border-primary hover:bg-primary/5 transition-all duration-300 cursor-pointer p-6">
+<div class="size-14 rounded-full bg-border-light dark:bg-surface-dark text-text-muted group-hover:text-primary group-hover:bg-primary/10 flex items-center justify-center transition-colors mb-4">
+<span class="material-symbols-outlined text-3xl">add_location_alt</span>
+</div>
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-1 group-hover:text-primary transition-colors">Add New Address</h3>
+<p class="text-sm text-text-muted text-center max-w-[200px]">Add a new destination for shipping or billing.</p>
+</button>
+<!-- Card 2: Default Address -->
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm border border-transparent hover:border-primary/30 transition-all duration-300 relative group min-h-[240px]">
+<!-- Badges -->
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-primary/10 text-primary uppercase tracking-wide">
+                                Default Shipping
+                            </span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                                Billing
+                            </span>
+</div>
+<!-- Info -->
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Jane Doe</h3>
+<span class="material-symbols-outlined text-text-muted text-[20px]">home</span>
+</div>
+<div class="flex-1 flex flex-col gap-1 text-sm text-text-main/80 dark:text-gray-300 mb-6">
+<p>123 Fashion Avenue, Apt 4B</p>
+<p>New York, NY 10012</p>
+<p>United States</p>
+<div class="mt-2 flex items-center gap-2 text-text-muted">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>+1 (555) 123-4567</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-4 border-t border-border-light dark:border-border-dark flex items-center justify-between">
+<button class="text-sm font-semibold text-text-main dark:text-white hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">edit</span> Edit
+                            </button>
+<!-- Default cannot be deleted usually, so maybe just disabled or hidden -->
+<button class="text-sm font-medium text-text-muted hover:text-red-500 transition-colors flex items-center gap-1 opacity-50 cursor-not-allowed" title="Cannot delete default address">
+<span class="material-symbols-outlined text-[18px]">delete</span> Remove
+                            </button>
+</div>
+</div>
+<!-- Card 3: Secondary Address -->
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm border border-transparent hover:border-primary/30 transition-all duration-300 relative group min-h-[240px]">
+<!-- Badges (Invisible spacer to align height or actual tag) -->
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+                                Office
+                            </span>
+</div>
+<!-- Info -->
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Jane Doe (Work)</h3>
+<span class="material-symbols-outlined text-text-muted text-[20px]">domain</span>
+</div>
+<div class="flex-1 flex flex-col gap-1 text-sm text-text-main/80 dark:text-gray-300 mb-6">
+<p>456 Tech Parkway, Suite 200</p>
+<p>Austin, TX 78701</p>
+<p>United States</p>
+<div class="mt-2 flex items-center gap-2 text-text-muted">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>+1 (512) 987-6543</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-4 border-t border-border-light dark:border-border-dark flex items-center justify-between">
+<div class="flex gap-4">
+<button class="text-sm font-semibold text-text-main dark:text-white hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">edit</span> Edit
+                                </button>
+<button class="text-sm font-medium text-text-muted hover:text-primary transition-colors flex items-center gap-1">
+                                    Set as Default
+                                </button>
+</div>
+<button class="text-sm font-medium text-text-muted hover:text-red-600 transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">delete</span> Remove
+                            </button>
+</div>
+</div>
+<!-- Card 4: Family Address -->
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm border border-transparent hover:border-primary/30 transition-all duration-300 relative group min-h-[240px]">
+<!-- Badges -->
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+                               Parents
+                           </span>
+</div>
+<!-- Info -->
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Robert &amp; Mary Doe</h3>
+<span class="material-symbols-outlined text-text-muted text-[20px]">cottage</span>
+</div>
+<div class="flex-1 flex flex-col gap-1 text-sm text-text-main/80 dark:text-gray-300 mb-6">
+<p>789 Oak Lane</p>
+<p>Portland, OR 97205</p>
+<p>United States</p>
+<div class="mt-2 flex items-center gap-2 text-text-muted">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>+1 (503) 555-0199</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-4 border-t border-border-light dark:border-border-dark flex items-center justify-between">
+<div class="flex gap-4">
+<button class="text-sm font-semibold text-text-main dark:text-white hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">edit</span> Edit
+                               </button>
+<button class="text-sm font-medium text-text-muted hover:text-primary transition-colors flex items-center gap-1">
+                                   Set as Default
+                               </button>
+</div>
+<button class="text-sm font-medium text-text-muted hover:text-red-600 transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">delete</span> Remove
+                           </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Navigation (Bottom) - Visible only on mobile -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-surface-dark border-t border-border-light dark:border-border-dark p-2 flex justify-around z-40">
+<a class="flex flex-col items-center gap-1 p-2 text-text-muted" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-primary" href="#">
+<span class="material-symbols-outlined fill-current">person</span>
+<span class="text-[10px] font-medium">Account</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-text-muted" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px] font-medium">Cart</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-text-muted" href="#">
+<span class="material-symbols-outlined">menu</span>
+<span class="text-[10px] font-medium">Menu</span>
+</a>
+</div>
+</main>
+</div>
+<!-- Notification Toast (Example) -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-500 pointer-events-none">
+<div class="bg-surface-dark dark:bg-white text-white dark:text-surface-dark px-4 py-3 rounded-lg shadow-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-green-400 dark:text-green-600">check_circle</span>
+<p class="text-sm font-medium">Address updated successfully</p>
+</div>
+</div>
+</body></html>

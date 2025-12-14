@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order History - Toi &amp; Moi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;family=Noto+Sans:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#da0b73",
+                        "secondary": "#9c4973", // Keeping the color from the source components as a secondary brand tone
+                        "background-light": "#fcf8fa", // From source component
+                        "background-dark": "#221019",
+                        "text-main": "#1c0d14", // From source component
+                        "border-subtle": "#f4e7ed", // From source component
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="flex flex-col border-b border-border-subtle dark:border-white/10 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="px-4 md:px-10 lg:px-40 py-3">
+<div class="flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-4 text-text-main dark:text-white group" href="#">
+<div class="size-8 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined !text-[20px]">diamond</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">Toi &amp; Moi</h2>
+</a>
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-text-main dark:text-white/80 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Shop</a>
+<a class="text-text-main dark:text-white/80 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">New Arrivals</a>
+<a class="text-text-main dark:text-white/80 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Sale</a>
+<a class="text-text-main dark:text-white/80 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Journal</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-[#f4e7ed] dark:bg-white/5 overflow-hidden">
+<div class="text-secondary dark:text-white/50 flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-text-main dark:text-white placeholder:text-secondary/70 dark:placeholder:text-white/30 text-sm font-medium" placeholder="Search" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg size-10 bg-[#f4e7ed] dark:bg-white/10 hover:bg-primary/10 hover:text-primary transition-colors text-text-main dark:text-white">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="flex items-center justify-center rounded-lg size-10 bg-[#f4e7ed] dark:bg-white/10 hover:bg-primary/10 hover:text-primary transition-colors text-text-main dark:text-white">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full px-4 md:px-10 lg:px-40 py-8">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Breadcrumbs (Mobile only mostly, or placed above sidebar on desktop) -->
+<div class="lg:col-span-12">
+<div class="flex flex-wrap gap-2 text-sm mb-4">
+<a class="text-secondary dark:text-white/60 hover:text-primary transition-colors" href="#">Home</a>
+<span class="text-secondary dark:text-white/40">/</span>
+<a class="text-secondary dark:text-white/60 hover:text-primary transition-colors" href="#">Account</a>
+<span class="text-secondary dark:text-white/40">/</span>
+<span class="text-text-main dark:text-white font-medium">Order History</span>
+</div>
+</div>
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:block lg:col-span-3">
+<div class="sticky top-24 space-y-8">
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-white/5 border border-border-subtle dark:border-white/10 shadow-sm">
+<div class="size-12 rounded-full bg-gray-200 dark:bg-white/10 overflow-hidden bg-cover bg-center" data-alt="Portrait of a young woman with a neutral expression" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAw6XTU05OddB74TcK30U86i5yX0UZWkW83Y6r7Z_gtPJv1BqHziR9i9WZhMdmH7V_U6M7xF1ZasvKd6MrDchCNSFbKKBFz7ucRnSGgAAGPV-qtxqMQ7wfT0KP2i8QWKjQs6kWWkAVCxGbKOYuW94_s_s7K2ECFPyFgqxOaAXNO1kozVw7aiiJ3P9APEmCM8gAcM49ilM4YZP-jZHeP8iLAA9FbbtnQYjQjFgJopgC0h3KNBHSrk72_aa7EPC6VQu57vyhwN6BBdX0');"></div>
+<div>
+<p class="text-xs text-secondary dark:text-white/60 font-medium">Welcome back,</p>
+<p class="text-text-main dark:text-white font-bold text-lg">Sarah Jenkins</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-white/70 hover:bg-primary/5 hover:text-primary transition-colors font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+                            My Profile
+                        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-bold shadow-sm border border-primary/20" href="#">
+<span class="material-symbols-outlined text-[20px] fill-1">receipt_long</span>
+                            Order History
+                        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-white/70 hover:bg-primary/5 hover:text-primary transition-colors font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+                            Wishlist
+                        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-white/70 hover:bg-primary/5 hover:text-primary transition-colors font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+                            Addresses
+                        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-white/70 hover:bg-primary/5 hover:text-primary transition-colors font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+                            Payment Methods
+                        </a>
+<div class="h-px bg-border-subtle dark:bg-white/10 my-2 mx-4"></div>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                            Log Out
+                        </a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="lg:col-span-9 flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-border-subtle dark:border-white/10">
+<div class="flex flex-col gap-2">
+<h1 class="text-text-main dark:text-white text-3xl md:text-4xl font-extrabold tracking-tight">Order History</h1>
+<p class="text-secondary dark:text-white/60 text-base">Track your open orders and review past purchases.</p>
+</div>
+</div>
+<!-- Status Filter Chips -->
+<div class="overflow-x-auto pb-2 -mb-2">
+<div class="flex gap-3 min-w-max">
+<button class="px-5 py-2.5 rounded-full bg-text-main dark:bg-white text-white dark:text-text-main text-sm font-bold shadow-md transition-transform hover:scale-105">
+                            All Orders
+                        </button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-white/5 border border-border-subtle dark:border-white/10 text-secondary dark:text-white/80 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                            Processing
+                        </button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-white/5 border border-border-subtle dark:border-white/10 text-secondary dark:text-white/80 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                            Shipped
+                        </button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-white/5 border border-border-subtle dark:border-white/10 text-secondary dark:text-white/80 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                            Delivered
+                        </button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-white/5 border border-border-subtle dark:border-white/10 text-secondary dark:text-white/80 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                            Returns
+                        </button>
+</div>
+</div>
+<!-- Orders Table Container -->
+<div class="bg-white dark:bg-white/5 rounded-2xl shadow-sm border border-border-subtle dark:border-white/10 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-background-light dark:bg-white/5 border-b border-border-subtle dark:border-white/10">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-secondary dark:text-white/50 w-24">Item</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-secondary dark:text-white/50">Order #</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-secondary dark:text-white/50">Date</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-secondary dark:text-white/50">Status</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-secondary dark:text-white/50 text-right">Total</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-secondary dark:text-white/50 text-right w-32">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle dark:divide-white/10">
+<!-- Row 1 -->
+<tr class="group hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="size-12 rounded-lg bg-gray-100 dark:bg-white/10 bg-cover bg-center border border-border-subtle dark:border-white/10" data-alt="Close up of a pink lipstick and cosmetic product" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABfpDLj-wyIO5E9y28XlQOMiQI04eO8K5dPUI3nJUb58-NLBu8iUz8hjuhfOFI0VdTTZYsZpx6E1NOVewAOqgjcEcHLyWtu10sW0LWXYW5Nh1jWiRxWDZn9ls5uAf2AGIB5iO7XPXJrT-_TfRo6mSb5zoQe-f1_c-BV44ekSY_kbf06Es2mpAZobOJ2qtFjft17rHANQi0TNLtWU6-iq9yo172wPcWtOc7SbR36SlnptXA8p6SztX0wPKru5wxggXbYe40pgq-M-U');"></div>
+</td>
+<td class="px-6 py-4">
+<span class="block text-sm font-bold text-text-main dark:text-white mb-1">#10255</span>
+<span class="text-xs text-secondary dark:text-white/50">2 Items</span>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-white font-medium">
+                                        Oct 24, 2023
+                                    </td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-500"></span>
+                                            Delivered
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-text-main dark:text-white text-right">
+                                        $145.00
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-bold text-sm inline-flex items-center gap-1 transition-colors">
+                                            Details
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="size-12 rounded-lg bg-gray-100 dark:bg-white/10 bg-cover bg-center border border-border-subtle dark:border-white/10" data-alt="Colorful eyeshadow palette on a white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAA85uzoeiGp8y57cnP0su-53yd-AY4K7kP_9xibemYJ9thvOnC36CHgRn_hhpe6VsfOYIgMF4sHp-T3dsJzc-5DjqhY9IqoSKOD5Iow7ugQsRVtQ8OzE9AFwymP5luP2l2RXrsUvNifPEyo7m0K1W9HKE1kD23VPUzxrmtr1PQlgsk66RQAN1gUJZ1STD-dpGLOaihfGl2Rfa5EsHYfPY3ED-FoaFwstzLXTkFvxofLy9Ph880fiB9oezcf3-74oxvoXGxBJN_zzc');"></div>
+</td>
+<td class="px-6 py-4">
+<span class="block text-sm font-bold text-text-main dark:text-white mb-1">#10248</span>
+<span class="text-xs text-secondary dark:text-white/50">1 Item</span>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-white font-medium">
+                                        Oct 20, 2023
+                                    </td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+<span class="size-1.5 rounded-full bg-blue-500"></span>
+                                            Shipped
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-text-main dark:text-white text-right">
+                                        $68.50
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-bold text-sm inline-flex items-center gap-1 transition-colors">
+                                            Track
+                                            <span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="size-12 rounded-lg bg-gray-100 dark:bg-white/10 bg-cover bg-center border border-border-subtle dark:border-white/10" data-alt="A bottle of luxury perfume with elegant lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD77XcPgQQQwVjuiuyqYdi8c_5bI9SACLyvI1fHmteUvj6TclzQY_F3a6DffTpfRt-qztVxQK6n7FhEd4rH6EE3nO84jyCTDzsuUujYWtyALJ2Ve_LauePBum8kKRNVBt_lZrRdP9UViZXq2tZQ-ifjafD_UWaP6LBqW48kB1qFpqKhi_3uOWQE4SzXAAeSzFDw0Gwrmhmm-Og_ZViZYLet_6wJNKCP4m6JFz4GLfSAaSueG67uqbar1xyZZzHsyTdtrGifKojeHrI');"></div>
+</td>
+<td class="px-6 py-4">
+<span class="block text-sm font-bold text-text-main dark:text-white mb-1">#10232</span>
+<span class="text-xs text-secondary dark:text-white/50">3 Items</span>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-white font-medium">
+                                        Oct 15, 2023
+                                    </td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400">
+<span class="size-1.5 rounded-full bg-yellow-500 animate-pulse"></span>
+                                            Processing
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-text-main dark:text-white text-right">
+                                        $210.00
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-bold text-sm inline-flex items-center gap-1 transition-colors">
+                                            Details
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="size-12 rounded-lg bg-gray-100 dark:bg-white/10 bg-cover bg-center border border-border-subtle dark:border-white/10" data-alt="A jar of skin cream on a plain background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkC3kqjXPiWcNRhGwZBISkWJnQYiPs0Uw4YATrmIG3yOLuVUydcr8dKPW6b2c2gs9EltJp5UZVivDXY39U2TrU1-QcIYqXVFM3P2gG5WGbTn5FUVABoheelhyCXR-apE4MvF9ZBv_UOesxv_5X4qQazIVjajS-3zesowDYGWR9mVLRENp0-zEDL49wCK8VWeyBdpSTGMDDKg75TSAe3b8UFYczeSVHua1SUZYuiXV9FEG4TMVPAzNLYBZvQctdOnjuWXosiK3Tbe8');"></div>
+</td>
+<td class="px-6 py-4">
+<span class="block text-sm font-bold text-text-main dark:text-white mb-1">#10221</span>
+<span class="text-xs text-secondary dark:text-white/50">1 Item</span>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-white font-medium">
+                                        Sep 30, 2023
+                                    </td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600 dark:bg-white/10 dark:text-gray-300">
+<span class="size-1.5 rounded-full bg-gray-400"></span>
+                                            Cancelled
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-text-main dark:text-white text-right">
+                                        $45.00
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-secondary dark:text-white/60 hover:text-primary font-bold text-sm inline-flex items-center gap-1 transition-colors">
+                                            Reorder
+                                            <span class="material-symbols-outlined text-[16px]">refresh</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="group hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="size-12 rounded-lg bg-gray-100 dark:bg-white/10 bg-cover bg-center border border-border-subtle dark:border-white/10" data-alt="Assortment of makeup brushes in a holder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCeThSf7bW0OXggfJetMrru7Sa_IZYYaY5xSveYjFQUSEjTH--ZA0YKjoty4CmbPaAcqS2WC3rHN0J8qGXC6wqa6aSot8RP4dcrAYddP2elDNHCBEfw104EsaDMKbRNqmKhreTsOngCkmQRFOoLFO9CqPMxmvy7KGW3FiJrQqsLo1eSgxPh5STrvqAG2ofFJUFQgLQR6IX9Xp7jZCkiietSu56ieiPktrg2770ckvzyBmPIJP3_gTJtF83SE6m6fJoetOtaKXiTo7I');"></div>
+</td>
+<td class="px-6 py-4">
+<span class="block text-sm font-bold text-text-main dark:text-white mb-1">#10198</span>
+<span class="text-xs text-secondary dark:text-white/50">4 Items</span>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-white font-medium">
+                                        Sep 15, 2023
+                                    </td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-500"></span>
+                                            Delivered
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-text-main dark:text-white text-right">
+                                        $325.50
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-bold text-sm inline-flex items-center gap-1 transition-colors">
+                                            Details
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Mobile View for Table (Responsive) -->
+<!-- Note: In a real app we might toggle visibility, but the table above handles some scrolling. 
+                         However, for strict mobile-first design, cards are often better. 
+                         Here I rely on overflow-x-auto on the table container which is a standard pattern for data tables. -->
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 border-t border-border-subtle dark:border-white/10 bg-background-light dark:bg-white/5">
+<p class="text-sm text-secondary dark:text-white/60">
+                            Showing <span class="font-bold text-text-main dark:text-white">1-5</span> of <span class="font-bold text-text-main dark:text-white">24</span> orders
+                        </p>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 rounded border border-border-subtle dark:border-white/10 text-sm font-medium text-secondary dark:text-white hover:bg-white hover:text-primary disabled:opacity-50 transition-colors">
+                                Previous
+                            </button>
+<button class="px-3 py-1.5 rounded border border-border-subtle dark:border-white/10 text-sm font-medium text-secondary dark:text-white hover:bg-white hover:text-primary transition-colors">
+                                Next
+                            </button>
+</div>
+</div>
+</div>
+<!-- Assistance Banner -->
+<div class="bg-primary/5 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 border border-primary/10">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-white dark:bg-white/10 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-text-main dark:text-white">Need help with an order?</h3>
+<p class="text-secondary dark:text-white/60 text-sm">Our support team is available 24/7 to assist you.</p>
+</div>
+</div>
+<button class="w-full md:w-auto px-6 py-3 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2">
+                        Contact Support
+                        <span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer for Context -->
+<footer class="mt-auto border-t border-border-subtle dark:border-white/10 bg-white dark:bg-background-dark py-12">
+<div class="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-40 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-text-main dark:text-white">
+<span class="material-symbols-outlined text-primary">diamond</span>
+<span class="font-bold tracking-tight">Toi &amp; Moi</span>
+</div>
+<p class="text-sm text-secondary dark:text-white/40">© 2023 Toi &amp; Moi. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-secondary dark:text-white/60 hover:text-primary transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-white/60 hover:text-primary transition-colors text-sm" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

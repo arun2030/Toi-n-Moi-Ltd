@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shopping Cart - Toi &amp; Moi</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b411d4",
+                        "background-light": "#f8f6f8",
+                        "background-dark": "#1f1022",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b32",
+                        "text-main-light": "#190d1b",
+                        "text-main-dark": "#f1e7f3",
+                        "text-secondary-light": "#8d4c9a",
+                        "text-secondary-dark": "#dcbce3",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ddd;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ccc;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark transition-colors duration-200">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-[#f1e7f3] dark:border-[#3e2a44]">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Left: Logo -->
+<div class="flex items-center gap-2">
+<a class="flex items-center gap-2 group" href="#">
+<div class="text-primary transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined filled">diamond</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-text-main-light dark:text-white">Toi &amp; Moi</h1>
+</a>
+</div>
+<!-- Center: Navigation Links (Hidden on mobile) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main-light dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#">New Arrivals</a>
+<a class="text-sm font-medium text-text-main-light dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#">Clothing</a>
+<a class="text-sm font-medium text-text-main-light dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#">Shoes</a>
+<a class="text-sm font-medium text-text-main-light dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-sm font-medium text-red-500 hover:text-red-600 transition-colors" href="#">Sale</a>
+</nav>
+<!-- Right: Actions -->
+<div class="flex items-center gap-4">
+<!-- Search (Desktop) -->
+<div class="hidden lg:flex items-center bg-background-light dark:bg-background-dark/50 rounded-lg px-3 py-1.5 border border-transparent focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-text-secondary-light text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-32 placeholder:text-text-secondary-light/70 text-text-main-light dark:text-white" placeholder="Search" type="text"/>
+</div>
+<!-- Search Icon (Mobile) -->
+<button class="lg:hidden p-2 text-text-main-light dark:text-white">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-text-main-light dark:text-white hover:bg-background-light dark:hover:bg-background-dark rounded-full transition-colors relative group">
+<span class="material-symbols-outlined">person</span>
+<span class="absolute top-10 right-0 w-max bg-surface-dark dark:bg-surface-light text-white dark:text-black text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Account</span>
+</button>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full transition-colors relative">
+<span class="material-symbols-outlined filled">shopping_bag</span>
+<span class="absolute top-0 right-0 h-4 w-4 bg-primary text-white text-[10px] font-bold flex items-center justify-center rounded-full ring-2 ring-white dark:ring-surface-dark">2</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex mb-8">
+<ol class="inline-flex items-center space-x-1 md:space-x-3">
+<li class="inline-flex items-center">
+<a class="inline-flex items-center text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark hover:text-primary" href="#">
+                        Home
+                    </a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-text-secondary-light/50 text-sm mx-1">chevron_right</span>
+<span class="text-sm font-medium text-text-main-light dark:text-white">Shopping Bag</span>
+</div>
+</li>
+</ol>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Cart Items -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Heading -->
+<div class="flex items-end justify-between border-b border-[#f1e7f3] dark:border-[#3e2a44] pb-4">
+<h2 class="text-3xl md:text-4xl font-bold tracking-tight text-text-main-light dark:text-white">Your Bag (2)</h2>
+<span class="text-text-secondary-light dark:text-text-secondary-dark text-sm hidden sm:block">Items are reserved for 60 minutes</span>
+</div>
+<!-- Cart Item 1 -->
+<div class="group relative flex flex-col sm:flex-row gap-6 bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-transparent hover:border-primary/20 transition-all shadow-sm">
+<div class="relative aspect-[3/4] w-full sm:w-[120px] rounded-lg overflow-hidden shrink-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Elegant black velvet evening dress on a model" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDxWdjsI3rO4Vva4gCEru_EKDeXGboLNZHzJceviH0X8umwjv_ZEyAHmNSjv2hctqf_y5MSDH8RdPpY8JgXxAhuzmjouyoikxDil4rdczc2Ih-TQzE6a7j3A8UWcMudWfhyyYN2lOTB8loDZ-sE6c1BFhuv7gfIVWZIhjLpNlwl1zVtq5HOC0KxpmwLtGOy5uCSfEek72EQtxcB07MjSjqN4vvhev8RkplgHBBsdBj0nlOzrzDBXuWmgqJ24eGjJUG89Xqse88O-Y');"></div>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h3 class="text-lg font-bold text-text-main-light dark:text-white mb-1">Velvet Evening Dress</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm mb-1">Black • Size M</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm">Ref: 8392-BLK-M</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-text-main-light dark:text-white">$120.00</p>
+</div>
+</div>
+<div class="flex items-end justify-between mt-4 sm:mt-0">
+<div class="flex items-center gap-6">
+<!-- Qty Selector -->
+<div class="flex items-center gap-3 bg-background-light dark:bg-background-dark rounded-full px-2 py-1">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center rounded-full text-text-main-light dark:text-white hover:bg-white dark:hover:bg-surface-dark shadow-sm transition-all">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-8 bg-transparent border-none text-center text-sm font-medium p-0 focus:ring-0 text-text-main-light dark:text-white" readonly="" type="number" value="1"/>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center rounded-full text-text-main-light dark:text-white hover:bg-white dark:hover:bg-surface-dark shadow-sm transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<button class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark hover:text-red-500 dark:hover:text-red-400 underline decoration-transparent hover:decoration-current transition-all">
+                                    Remove
+                                </button>
+</div>
+<button class="text-sm font-medium text-primary hover:text-primary/80 dark:hover:text-primary/80 transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+<span class="hidden sm:inline">Save for later</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="group relative flex flex-col sm:flex-row gap-6 bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-transparent hover:border-primary/20 transition-all shadow-sm">
+<div class="relative aspect-[3/4] w-full sm:w-[120px] rounded-lg overflow-hidden shrink-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Gold statement earrings detailed close up" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgjXbfgi1GY1fzGdl1-51hRl2rDOottOEp7WHkivB9Yqhh2Z5LjLJ9wMpKluwr-kYRMONXCFZ6GFkIdYDwUeW2WClnpA3UA7lkDrn3xbMPCGQyz-zvmo1zAgj6DyRM7BNscFo5tZzHv_rzWDWgPKtssVda5yo7cwkpMtuAIsJrDigEta3oWSNmbpjUHV9cUNdgC_Od7v-3ObkCj2zWXesjdra5haV1K2U7h3wucZLNq6QOAGdZRdrF1vr70B7hkcvefYoHs8q0AvQ');"></div>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h3 class="text-lg font-bold text-text-main-light dark:text-white mb-1">Statement Earrings</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm mb-1">Gold • One Size</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm">Ref: 9921-GLD-OS</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-text-main-light dark:text-white">$45.00</p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark line-through">$60.00</p>
+</div>
+</div>
+<div class="flex items-end justify-between mt-4 sm:mt-0">
+<div class="flex items-center gap-6">
+<!-- Qty Selector -->
+<div class="flex items-center gap-3 bg-background-light dark:bg-background-dark rounded-full px-2 py-1">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center rounded-full text-text-main-light dark:text-white hover:bg-white dark:hover:bg-surface-dark shadow-sm transition-all">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-8 bg-transparent border-none text-center text-sm font-medium p-0 focus:ring-0 text-text-main-light dark:text-white" readonly="" type="number" value="1"/>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center rounded-full text-text-main-light dark:text-white hover:bg-white dark:hover:bg-surface-dark shadow-sm transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<button class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark hover:text-red-500 dark:hover:text-red-400 underline decoration-transparent hover:decoration-current transition-all">
+                                    Remove
+                                </button>
+</div>
+<button class="text-sm font-medium text-primary hover:text-primary/80 dark:hover:text-primary/80 transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+<span class="hidden sm:inline">Save for later</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="lg:col-span-4">
+<div class="sticky top-24 space-y-6">
+<div class="bg-white dark:bg-surface-dark rounded-xl p-6 shadow-sm border border-[#f1e7f3] dark:border-[#3e2a44]">
+<h3 class="text-xl font-bold text-text-main-light dark:text-white mb-6">Order Summary</h3>
+<div class="space-y-4 mb-6">
+<div class="flex justify-between text-sm">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Subtotal</span>
+<span class="font-medium text-text-main-light dark:text-white">$165.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Shipping Estimate</span>
+<span class="font-medium text-green-600 dark:text-green-400">Free</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Tax</span>
+<span class="font-medium text-text-main-light dark:text-white">$12.50</span>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="mb-6">
+<div class="relative flex items-center">
+<input class="w-full bg-background-light dark:bg-background-dark border-none rounded-lg py-2.5 pl-4 pr-20 text-sm focus:ring-1 focus:ring-primary text-text-main-light dark:text-white placeholder:text-text-secondary-light/60" placeholder="Promo Code" type="text"/>
+<button class="absolute right-2 top-1.5 bottom-1.5 px-3 bg-white dark:bg-surface-dark text-primary text-xs font-bold uppercase rounded hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors shadow-sm">
+                                    Apply
+                                </button>
+</div>
+</div>
+<div class="border-t border-[#f1e7f3] dark:border-[#3e2a44] pt-4 mb-6">
+<div class="flex justify-between items-end">
+<span class="text-base font-bold text-text-main-light dark:text-white">Total</span>
+<span class="text-2xl font-bold text-text-main-light dark:text-white">$177.50</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-4 rounded-lg shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 group">
+<span>Proceed to Checkout</span>
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<div class="mt-6 flex justify-center gap-3 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="h-6 w-10 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center text-[10px] font-bold text-gray-500 dark:text-gray-300">VISA</div>
+<div class="h-6 w-10 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center text-[10px] font-bold text-gray-500 dark:text-gray-300">MC</div>
+<div class="h-6 w-10 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center text-[10px] font-bold text-gray-500 dark:text-gray-300">AMEX</div>
+<div class="h-6 w-10 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center text-[10px] font-bold text-gray-500 dark:text-gray-300">PP</div>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Secure Checkout</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recommendations Section -->
+<section class="mt-24">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold text-text-main-light dark:text-white">You Might Also Like</h3>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:border-primary text-text-main-light dark:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:border-primary text-text-main-light dark:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Rec Item 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Modern leather handbag on white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXrM2c7Vz_YJ_KPLw2ur7NIqZBA7ozuzaHsOJy2RR_lFf0u_0tEA1H2ph7utgRy-tkiWXMWU9YTTtJdK5zNNRdxnLpEbFyWtIUKrH-LfbFm0ucET1B8NrAHooR8fHNOrfKWfy7nttJcR4mFpeuRVqqCR9UCJDV-44NTJWiXAL8sZox4DMAHi4uXiEngbqNe3NpH7Yk3-z-lM99aQg7NF6M3nZbbHoTVb39z_QMT34vyJnR6QQFGLIeNQQnE5ZLhzg2iWNSpH64fDc');"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 bg-white dark:bg-surface-dark text-primary rounded-full shadow-md flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<h4 class="font-bold text-text-main-light dark:text-white mb-1">Leather Crossbody</h4>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">$89.00</p>
+</div>
+<!-- Rec Item 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Blue denim high heels fashion shot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtHM3E1kO4G_-QZtOxSCyHez5skFbr8XpPN8YuirQer3ptr1CaW1R4Vk3fGi-5qQSLm-55ShMapvBsga7glbxSxwnHXsNuxje-GWu_NuqRzZ_9I8o7acdKPnV3S8yhKicoXK1IVZWifkbc_PKPCS7vHo_TM5ZUqNQeRSNNG8Euckm-xKf4g6IwHYhTBonTbCMkTvVNco2Nto_mpfbmGkJaZ4soE1lWCglLirz-vR7EWrrveJaGUIQT4htOY8kpngKiAFQ9INbdnyY');"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 bg-white dark:bg-surface-dark text-primary rounded-full shadow-md flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<h4 class="font-bold text-text-main-light dark:text-white mb-1">Denim Heels</h4>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">$110.00</p>
+</div>
+<!-- Rec Item 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+<span class="absolute top-2 left-2 bg-text-main-light text-white text-[10px] font-bold px-2 py-1 rounded z-10">NEW</span>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Colorful silk scarf pattern texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwWtNekcFaeffvcZdQNnzNga6Dao0r12B06BY-7uoafG-NnUuw4ZzkYC558WSD8m5gP_hLUEEa4xFE8yZsa-6Z7UlZYyaL2lGbQZfY-fcfjMFgnYrcJxx2ordudWbmsRZ2dr0nMxSDgawztOpatnsx0MTom8uvPfX6KxFfDhJL9-O4PddO26d4D1xNGX-zsHdRhy0xGEmLsMAFCDp2OgCK-Y2yxWMM3IpRBnO8Zn8tyBDUBfm3GV-pOx_gVVIcyDqe-d_rNAXwu1k');"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 bg-white dark:bg-surface-dark text-primary rounded-full shadow-md flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<h4 class="font-bold text-text-main-light dark:text-white mb-1">Silk Scarf</h4>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">$35.00</p>
+</div>
+<!-- Rec Item 4 -->
+<div class="group cursor-pointer hidden md:block">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Golden minimalist bracelet jewelry" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHYZNrmqSDNkup1DDdM75XnPME3tRmaNFUlZcs5balWrdvzTlE4KG4nwSWU76wt_2Bq10Ch6ThiHrkoF_Dv7Bu1CuGBcbi0p19eWN-p3QmgUJs_Y06Mod_8lExT-RtoiyQv4e84hdFyXX2kQ0SaE97265n4enUV6zFSvWPM6rIKG2MoOtdwclX5NmR-pi60_Lc703i-s_XCszFQlYvOTOsle4yvcdCaNo80fhk7x6lWHUPGSz241LUnTP_L3OkE1d29quJWjefW6U');"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 bg-white dark:bg-surface-dark text-primary rounded-full shadow-md flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<h4 class="font-bold text-text-main-light dark:text-white mb-1">Gold Cuff Bracelet</h4>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">$55.00</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Simple Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-[#f1e7f3] dark:border-[#3e2a44] py-12 mt-12">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<h5 class="font-bold text-text-main-light dark:text-white mb-4">Toi &amp; Moi</h5>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Modern fashion for the contemporary soul. Curated collections for your unique style.</p>
+</div>
+<div>
+<h5 class="font-bold text-text-main-light dark:text-white mb-4">Shop</h5>
+<ul class="space-y-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<li><a class="hover:text-primary transition-colors" href="#">New Arrivals</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Clothing</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Accessories</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-text-main-light dark:text-white mb-4">Support</h5>
+<ul class="space-y-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Size Guide</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-text-main-light dark:text-white mb-4">Newsletter</h5>
+<div class="flex flex-col gap-2">
+<input class="bg-background-light dark:bg-background-dark border-transparent rounded px-3 py-2 text-sm focus:ring-1 focus:ring-primary" placeholder="Your email" type="email"/>
+<button class="bg-text-main-light dark:bg-white text-white dark:text-black text-sm font-bold py-2 rounded hover:opacity-90 transition-opacity">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-[#f1e7f3] dark:border-[#3e2a44] flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">© 2024 Toi &amp; Moi. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-lg">photo_camera</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

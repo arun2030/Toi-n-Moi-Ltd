@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shipping Information - Toi &amp; Moi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b411d4",
+                        "background-light": "#f8f6f8",
+                        "background-dark": "#1f1022",
+                        "border-light": "#e3cfe7",
+                        "text-dark": "#190d1b",
+                        "text-muted": "#8d4c9a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .form-checkbox:checked {
+            background-color: #b411d4;
+            border-color: #b411d4;
+        }
+        .form-radio:checked {
+            background-color: #b411d4;
+            border-color: #b411d4;
+        }
+        .form-input:focus, .form-select:focus {
+            border-color: #b411d4;
+            box-shadow: 0 0 0 1px #b411d4;
+        }
+        
+        /* Custom scrollbar for cleanliness */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e3cfe7;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-dark antialiased">
+<div class="flex flex-col lg:flex-row min-h-screen">
+<!-- Left Column: Main Content -->
+<div class="w-full lg:w-[58%] xl:w-[55%] flex flex-col border-r border-border-light bg-white dark:bg-background-dark min-h-screen">
+<div class="flex-1 px-4 py-8 sm:px-10 lg:pl-20 lg:pr-14 xl:pl-40 xl:pr-20">
+<!-- Logo -->
+<header class="pb-6">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-4xl">local_florist</span>
+<h1 class="text-text-dark text-2xl font-bold tracking-tight">Toi &amp; Moi</h1>
+</div>
+</header>
+<!-- Breadcrumbs -->
+<nav class="flex items-center flex-wrap gap-2 text-sm mb-8">
+<a class="text-text-muted hover:text-primary transition-colors" href="#">Cart</a>
+<span class="material-symbols-outlined text-xs text-text-muted">chevron_right</span>
+<span class="font-bold text-text-dark">Information</span>
+<span class="material-symbols-outlined text-xs text-text-muted">chevron_right</span>
+<span class="text-text-muted">Shipping</span>
+<span class="material-symbols-outlined text-xs text-text-muted">chevron_right</span>
+<span class="text-text-muted">Payment</span>
+</nav>
+<!-- Contact Information -->
+<section class="mb-10">
+<div class="flex justify-between items-baseline mb-4">
+<h2 class="text-lg font-bold text-text-dark">Contact information</h2>
+<a class="text-sm text-primary font-medium hover:underline" href="#">Log in</a>
+</div>
+<div class="space-y-4">
+<input class="form-input w-full rounded-lg border-border-light bg-background-light/50 px-4 py-3 text-base placeholder:text-text-muted focus:ring-0" placeholder="Email or mobile phone number" type="email"/>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="form-checkbox rounded text-primary border-border-light h-5 w-5 focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-sm text-text-dark">Email me with news and offers</span>
+</label>
+</div>
+</section>
+<!-- Shipping Address -->
+<section class="mb-8">
+<h2 class="text-lg font-bold text-text-dark mb-4">Shipping address</h2>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="md:col-span-2">
+<select class="form-select w-full rounded-lg border-border-light bg-background-light/50 px-4 py-3 text-base text-text-dark focus:ring-0">
+<option>United States</option>
+<option>Canada</option>
+<option>United Kingdom</option>
+<option>France</option>
+</select>
+</div>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light/50 px-4 py-3 text-base placeholder:text-text-muted focus:ring-0" placeholder="First name" type="text"/>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light/50 px-4 py-3 text-base placeholder:text-text-muted focus:ring-0" placeholder="Last name" type="text"/>
+<div class="md:col-span-2">
+<input class="form-input w-full rounded-lg border-border-light bg-background-light/50 px-4 py-3 text-base placeholder:text-text-muted focus:ring-0" placeholder="Address" type="text"/>
+</div>
+<div class="md:col-span-2">
+<input class="form-input w-full rounded-lg border-border-light bg-background-light/50 px-4 py-3 text-base placeholder:text-text-muted focus:ring-0" placeholder="Apartment, suite, etc. (optional)" type="text"/>
+</div>
+<div class="md:col-span-2 grid grid-cols-3 gap-4">
+<input class="form-input w-full rounded-lg border-border-light bg-background-light/50 px-4 py-3 text-base placeholder:text-text-muted focus:ring-0 col-span-1" placeholder="City" type="text"/>
+<select class="form-select w-full rounded-lg border-border-light bg-background-light/50 px-4 py-3 text-base text-text-muted focus:ring-0 col-span-1">
+<option>State</option>
+<option>NY</option>
+<option>CA</option>
+</select>
+<input class="form-input w-full rounded-lg border-border-light bg-background-light/50 px-4 py-3 text-base placeholder:text-text-muted focus:ring-0 col-span-1" placeholder="ZIP code" type="text"/>
+</div>
+<div class="md:col-span-2 relative">
+<input class="form-input w-full rounded-lg border-border-light bg-background-light/50 px-4 py-3 text-base placeholder:text-text-muted focus:ring-0" placeholder="Phone" type="tel"/>
+<div class="absolute right-3 top-3 text-text-muted cursor-help group">
+<span class="material-symbols-outlined text-xl">help</span>
+<span class="absolute bottom-full right-0 mb-2 hidden w-48 rounded bg-text-dark p-2 text-xs text-white group-hover:block">Required for shipping updates</span>
+</div>
+</div>
+<div class="md:col-span-2 mt-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="form-checkbox rounded text-primary border-border-light h-5 w-5 focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-sm text-text-dark">Save this information for next time</span>
+</label>
+</div>
+</form>
+</section>
+<!-- Navigation Actions -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 mt-8 mb-12">
+<a class="text-primary hover:text-primary/80 flex items-center gap-1 font-medium text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-base">chevron_left</span>
+                        Return to cart
+                    </a>
+<button class="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-lg shadow-sm transition-all transform active:scale-95 flex items-center justify-center gap-2">
+                        Continue to shipping
+                    </button>
+</div>
+<!-- Footer Links -->
+<footer class="border-t border-border-light pt-6 pb-4">
+<div class="flex flex-wrap gap-4 text-xs text-text-muted">
+<a class="hover:text-primary underline" href="#">Refund policy</a>
+<a class="hover:text-primary underline" href="#">Shipping policy</a>
+<a class="hover:text-primary underline" href="#">Privacy policy</a>
+<a class="hover:text-primary underline" href="#">Terms of service</a>
+</div>
+</footer>
+</div>
+</div>
+<!-- Right Column: Order Summary (Sidebar) -->
+<div class="w-full lg:w-[42%] xl:w-[45%] bg-[#fafafa] dark:bg-background-dark/50 lg:border-l border-border-light order-first lg:order-last">
+<div class="sticky top-0 h-full max-h-screen overflow-y-auto px-4 py-8 sm:px-10 lg:pl-10 lg:pr-20 xl:pl-14 xl:pr-40">
+<!-- Cart Items -->
+<div class="space-y-6 mb-8">
+<!-- Item 1 -->
+<div class="flex items-center gap-4">
+<div class="relative h-16 w-16 rounded-lg border border-border-light bg-white p-1">
+<img alt="Abstract purple swirly artistic pattern" class="h-full w-full object-cover rounded" data-alt="Abstract purple swirly artistic pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvKq7WPNSS9STRYznA3h4VKjURG7_oPATPxQLtAAODvnRaaaa3eqKM8Jy7T5CF8K9-3YUtrHFHVEzWnGFIBDaE1rJp8Ix4QkiSCvbOArwHzpIGLf_3mOdNTf5K00zCI_j7EfrTAMt1PuBz5ig8IM1cmKEe8x8MesNhZ6HnnPDEZsQMqvqDfkMy5kjvXNlwhQO9IqkzyK-EDZWdA9pOqxhzaXbMPN3cjeMPPJ2F_CBGwkFVWAam-hg6zcKK0tr_LYoi0d_vjq09RIo"/>
+<span class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-text-dark/70 text-xs font-bold text-white backdrop-blur-sm">1</span>
+</div>
+<div class="flex-1">
+<h3 class="font-medium text-text-dark">Silk Touch Blouse</h3>
+<p class="text-xs text-text-muted">Lavender / M</p>
+</div>
+<p class="font-medium text-text-dark">$120.00</p>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4">
+<div class="relative h-16 w-16 rounded-lg border border-border-light bg-white p-1">
+<img alt="Minimalist purple silk fabric texture" class="h-full w-full object-cover rounded" data-alt="Minimalist purple silk fabric texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxA_wlWq9LVDbRx5Hjhlup1ndMvQyq4ZWyV1EjnJdc_3-olQiBddk_NaVeMNq527DgmsBk1p1ev8PCw1mM6gIjJQpErwLtLchM3GIcLJc5fVD3sTZu7Qgo7wNqBu9R0_F273cJNeD0ll9lglgYEcJhKDtN2EX4wNaVstsYbxq3OO8sfqV2X-7jKUkz_SZh1CAMR3IYYozCLH7N7aBqHmKBbVrUFrb7_Z-OG92Inqe7gbdHeWwZ3M3sk41_bGKwha1ytHJLnVjj08c"/>
+<span class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-text-dark/70 text-xs font-bold text-white backdrop-blur-sm">2</span>
+</div>
+<div class="flex-1">
+<h3 class="font-medium text-text-dark">Essential Trousers</h3>
+<p class="text-xs text-text-muted">Black / 32</p>
+</div>
+<p class="font-medium text-text-dark">$180.00</p>
+</div>
+</div>
+<!-- Discount Code -->
+<div class="flex gap-3 mb-8 pb-8 border-b border-border-light border-dashed">
+<div class="relative flex-1">
+<input class="form-input w-full rounded-lg border-border-light bg-white px-4 py-3 text-base placeholder:text-text-muted focus:ring-0 focus:border-primary" placeholder="Discount code" type="text"/>
+</div>
+<button class="bg-primary/10 hover:bg-primary/20 text-primary font-bold py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        Apply
+                    </button>
+</div>
+<!-- Calculation -->
+<div class="space-y-3 mb-8 border-b border-border-light border-dashed pb-8">
+<div class="flex justify-between text-sm">
+<span class="text-text-muted">Subtotal</span>
+<span class="font-medium text-text-dark">$300.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-text-muted">Shipping</span>
+<span class="text-xs text-text-muted bg-gray-200 px-2 py-1 rounded">Calculated at next step</span>
+</div>
+</div>
+<!-- Total -->
+<div class="flex justify-between items-center mb-4">
+<span class="text-lg font-medium text-text-dark">Total</span>
+<div class="flex items-baseline gap-2">
+<span class="text-sm text-text-muted">USD</span>
+<span class="text-2xl font-bold text-text-dark">$300.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
