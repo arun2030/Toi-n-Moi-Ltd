@@ -86,7 +86,7 @@ async function syncSupplierProducts() {
             const slug = slugify(item.product_name, { lower: true, strict: true });
 
             // Prepare Image
-            let imageAsset = null;
+            let imageAsset: any = null;
             if (item.image_url) {
                 // Check if we already have this image or logic to skip re-uploading can be added here
                 // For now, we upload
@@ -106,7 +106,8 @@ async function syncSupplierProducts() {
                 stockLevel: item.inventory_count, // Updating stock level
                 stripePriceId: item.stripe_price_id,
                 // Only update image if we fetched a new one
-                ...(imageAsset && {
+                // Only update image if we fetched a new one
+                ...(imageAsset ? {
                     mainImage: {
                         _type: 'image',
                         asset: {
@@ -122,7 +123,7 @@ async function syncSupplierProducts() {
                             _ref: imageAsset._id,
                         },
                     }]
-                }),
+                } : {}),
             };
 
             // Perform Update (createOrReplace)
